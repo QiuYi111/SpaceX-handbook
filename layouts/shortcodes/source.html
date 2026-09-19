@@ -1,4 +1,4 @@
 {{ $id := .Get 0 }}
-{{ range site.Data.sources }}
+{{ range hugo.Data.sources }}
   {{ if eq .id $id }}<a class="source-ref tier-{{ lower .tier }}" href="{{ .url }}" target="_blank" rel="noopener">[{{ .id }} · {{ .tier }}]</a>{{ end }}
 {{ end }}
