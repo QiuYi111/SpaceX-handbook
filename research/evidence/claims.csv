@@ -1,0 +1,27 @@
+claim_id,claim,confidence,source_ids
+C001,使命是长期稳定的顶层约束，组织围绕它对齐。,strong,SX-001;SX-014;SX-016
+C002,SpaceX 正式把 first-principles thinking 作为核心工程方法。,strong,SX-001;SX-004;SX-014
+C003,The Algorithm 的顺序是质疑需求→删除→优化→提速→自动化。,very strong,SX-001;SX-004;SX-018
+C004,SpaceX 用垂直整合缩短设计制造测试和变更反馈环。,very strong,SX-001;SX-002;SX-003;SX-019;SX-023
+C005,2012 SpaceX 系统工程公开原则把 Responsibility 放在流程之上。,very strong,SX-002
+C006,快速原型并非无条件正确；平衡点取决于组织灵活度迭代成本和低层需求可交易性。,very strong,SX-002
+C007,顶层用户需求要跟踪验证，低层设计参数在设计阶段可持续交易优化。,very strong,SX-002
+C008,系统级工作分散到各部门，再由跨公司的 integrator 网络连接。,very strong,SX-002;SX-014
+C009,SpaceX 强调 Tools not Rules，并使用现代信息工具替代部分传统控制板。,very strong,SX-002;SX-003
+C010,Design-Build-Test 快速循环用真实经验反哺设计。,very strong,SX-002;SX-003;SX-019
+C011,产品越成熟文档和流程越正式；开发资格首飞生产不是同一风险制度。,very strong,SX-002;SX-006;SX-008
+C012,Test Like You Fly / Test What You Fly，并在多个集成层级严格测试。,very strong,SX-002;SX-008
+C013,NASA 观察到 SpaceX 用 Confluence SharePoint TRAC 做异步信息和 virtual review。,very strong,SX-003
+C014,NASA 观察到 SpaceX 在早期设计阶段持续压成本，内制同时改善进度和变更速度。,very strong,SX-003
+C015,Responsible Engineer 对 outcome 进度资源接口需求和预算承担所有权，并应有相应决策权。,strong,SX-010;SX-012;SX-029
+C016,SpaceX 内部软件连接采购库存设计工单制造质量和变更。,very strong,SX-005;SX-007
+C017,软件团队可直接嵌入制造现场，软件不是纯 IT 支持而是生产系统的一部分。,strong,SX-007
+C018,SpaceX 自建 CI 并把自动测试与人工测试结合；安全关键软件有更严验证。,strong,SX-006;SX-008
+C019,早期文化重沟通工程师行动空间和快速决策。,strong,SX-009;SX-016
+C020,工程与制造边界被弱化；设计从一开始考虑能否按速率生产。,strong,SX-014;SX-019
+C021,风险应在系统正确层级推理，不要求每个部件独立追求完美。,medium-strong,SX-014
+C022,失败可接受的前提是降低单次实验代价缩短反馈把风险边界包住，而非降低正式任务安全要求。,synthesis,SX-002;SX-006;SX-008;SX-023
+C023,SpaceX 的速度有明显人力代价；极端长工时不应被误写成必要工程原则。,strong,SX-012;SX-030;SX-028
+C024,NASA 与 SpaceX 的决策速度差异部分来自错误代价合同组织结构和可逆性。,strong,SX-023;SX-003
+C025,Lean Risk Ticket 是前 SpaceX 人员给 startup 的迁移方案，不是已证实的 SpaceX 内部原样流程。,very strong,SX-020;SX-021
+C026,Flow Handbook 是二次综合，具体 SpaceX 断言需回一手来源核验。,very strong,SX-024;SX-025;SX-002

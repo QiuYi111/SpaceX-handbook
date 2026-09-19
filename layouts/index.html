@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="eyebrow">Evidence-backed · Chinese-first</div>
+  <h1>SpaceX Engineering Handbook</h1>
+  <p>把 SpaceX 公开工程文化拆成可追证据、可学习、可迁移的方法，而不是把“敢炸”当成文化。</p>
+  <div class="hero-actions">
+    <a class="button" href="{{ "handbook/" | relURL }}">开始阅读 Handbook</a>
+    <a class="button ghost" href="{{ "sources/" | relURL }}">查看全部来源</a>
+  </div>
+</section>
+
+<section>
+  <h2>六条主线</h2>
+  <div class="cards">
+    <a class="card" href="{{ "handbook/01-responsibility/" | relURL }}"><strong>Outcome ownership</strong><span>一件事一个真正 owner，责任与权力一起下放。</span></a>
+    <a class="card" href="{{ "handbook/03-the-algorithm/" | relURL }}"><strong>The Algorithm</strong><span>质疑 → 删除 → 优化 → 提速 → 自动化。</span></a>
+    <a class="card" href="{{ "handbook/05-development-loop/" | relURL }}"><strong>短反馈环</strong><span>设计—制造—测试—数据—修改。</span></a>
+    <a class="card" href="{{ "handbook/06-testing/" | relURL }}"><strong>强测试</strong><span>快不是少测，而是让真实证据更早回来。</span></a>
+    <a class="card" href="{{ "handbook/10-digital-thread/" | relURL }}"><strong>软件即工厂</strong><span>工程、制造、质量、变更和数据在一条链上。</span></a>
+    <a class="card" href="{{ "handbook/99-medtech-transfer/" | relURL }}"><strong>医疗器械迁移</strong><span>把速度原则放进患者安全与法规边界。</span></a>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,272 @@
+[
+  {
+    "id": "SX-001",
+    "tier": "P0",
+    "title": "SpaceX Form S-1/A (2026)",
+    "author": "Space Exploration Technologies Corp.",
+    "date": "2026-06-03",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026040364/spaceexplorationtechnologib.htm",
+    "themes": "mission; first principles; The Algorithm; vertical integration; engineering-first; cost/throughput"
+  },
+  {
+    "id": "SX-002",
+    "tier": "P0*",
+    "title": "System Engineering: A Traditional Discipline in a Non-traditional Organization",
+    "author": "John Muratore, SpaceX",
+    "date": "2012-09-28",
+    "url": "https://sewiki.ru/images/0/00/CASE2012_2-4_Muratore_presentation.pdf",
+    "themes": "Responsibility; tools not rules; systems engineering; requirements; design-build-test; test; maturity"
+  },
+  {
+    "id": "SX-003",
+    "tier": "P0",
+    "title": "Commercial Orbital Transportation Services (COTS) Program Lessons Learned",
+    "author": "NASA / Alan Lindenmoyer et al.",
+    "date": "2013-11-13",
+    "url": "https://ntrs.nasa.gov/citations/20150009324",
+    "themes": "NASA observation; cost; in-house; Confluence; SharePoint; TRAC; async review"
+  },
+  {
+    "id": "SX-004",
+    "tier": "P0",
+    "title": "Starbase Tour and Interview with Elon Musk",
+    "author": "Everyday Astronaut / Elon Musk",
+    "date": "2021",
+    "url": "https://everydayastronaut.com/starbase-tour-and-interview-with-elon-musk/",
+    "themes": "The Algorithm; requirements; deletion; simplification; cycle time; automation"
+  },
+  {
+    "id": "SX-005",
+    "tier": "P0",
+    "title": "We are SpaceX Software Engineers — AMA",
+    "author": "SpaceX software team",
+    "date": "2013",
+    "url": "https://www.reddit.com/r/IAmA/comments/1853ap/we_are_spacex_software_engineers_we_launch/",
+    "themes": "internal software; EIS; manufacturing; work orders; inventory; operations"
+  },
+  {
+    "id": "SX-006",
+    "tier": "P0",
+    "title": "We are the SpaceX software team, ask us anything!",
+    "author": "SpaceX software team",
+    "date": "2020",
+    "url": "https://www.reddit.com/r/spacex/comments/gxb7j1/we_are_the_spacex_software_team_ask_us_anything/",
+    "themes": "flight software; safety; Starlink rollout; testing; software culture"
+  },
+  {
+    "id": "SX-007",
+    "tier": "P1",
+    "title": "Building the software that helps build SpaceX",
+    "author": "Stack Overflow interview with SpaceX engineers",
+    "date": "2021-05-13",
+    "url": "https://stackoverflow.blog/2021/05/13/building-the-software-that-helps-build-spacex/",
+    "themes": "Warp Drive; manufacturing software; digital thread; change management; floor-embedded software"
+  },
+  {
+    "id": "SX-008",
+    "tier": "P1",
+    "title": "Testing software so it's reliable enough for space",
+    "author": "Stack Overflow interview with SpaceX engineers",
+    "date": "2021-05-11",
+    "url": "https://stackoverflow.blog/2021/05/11/testing-software-so-its-reliable-enough-for-space/",
+    "themes": "CI; automated testing; human testing; software delivery; reliability"
+  },
+  {
+    "id": "SX-009",
+    "tier": "P1",
+    "title": "RZ083 SpaceX",
+    "author": "Hans Koenigsmann interview",
+    "date": "2020-01-17",
+    "url": "https://raumzeit-podcast.de/2020/01/17/rz083-spacex/",
+    "themes": "communication; autonomy; procurement; test lab; flat organization"
+  },
+  {
+    "id": "SX-010",
+    "tier": "P1",
+    "title": "The Responsible Engineer",
+    "author": "Santi Udomkesmalee and vdot",
+    "date": "2025-08-21",
+    "url": "https://theresponsibleengineer.substack.com/p/the-responsible-engineer-329",
+    "themes": "Responsible Engineer; outcome ownership; authority; schedule; budget; interfaces"
+  },
+  {
+    "id": "SX-011",
+    "tier": "P1V",
+    "title": "Santi Udomkesmalee — Deep Tech Advisor",
+    "author": "Santi Udomkesmalee",
+    "date": "current",
+    "url": "https://www.santiu.com/",
+    "themes": "author provenance"
+  },
+  {
+    "id": "SX-012",
+    "tier": "P1",
+    "title": "SpaceX SLC-4E Lead Engineer",
+    "author": "Ben Kellie",
+    "date": "current",
+    "url": "https://www.benkellie.com/portfolio/spx-vandy",
+    "themes": "RE in practice; design-build-test-commission; operations; work intensity"
+  },
+  {
+    "id": "SX-013",
+    "tier": "P1",
+    "title": "How Lessons from SpaceX Will Make Radiant a Reality",
+    "author": "Chris Hansen / Radiant",
+    "date": "current",
+    "url": "https://radiantnuclear.com/news/making-radiant-reality-chris-hansen",
+    "themes": "transfer to regulated hardware; ownership; build-test; nuclear"
+  },
+  {
+    "id": "SX-014",
+    "tier": "P1",
+    "title": "Innovation … SpaceX style",
+    "author": "Ramakrishna Akella",
+    "date": "2026",
+    "url": "https://www.linkedin.com/posts/ramakrishnaakella_innovation-spacex-style-in-an-earlier-activity-7420975419228635136-wV6w",
+    "themes": "mission; deletion; distributed systems engineering; iteration; manufacturing; risk; insourcing"
+  },
+  {
+    "id": "SX-015",
+    "tier": "P1",
+    "title": "The Yin; the Yang and everything in between",
+    "author": "Ramakrishna Akella",
+    "date": "2024",
+    "url": "https://www.linkedin.com/posts/ramakrishnaakella_the-yin-the-yang-and-everything-in-between-activity-7250918104824758272--K7P",
+    "themes": "team composition; experts and young engineers; Starlink execution; leadership"
+  },
+  {
+    "id": "SX-016",
+    "tier": "P1",
+    "title": "Tom Mueller — Impulse Space founder interview",
+    "author": "Tom Mueller / DFJ Growth",
+    "date": "current",
+    "url": "https://dfjgrowth.com/founders/tom-mueller/impulse-space/",
+    "themes": "ownership; startup culture; collaboration; early Falcon 1; leadership"
+  },
+  {
+    "id": "SX-017",
+    "tier": "P1",
+    "title": "Tom Mueller 2017 talk/interview transcript",
+    "author": "Tom Mueller",
+    "date": "2017-05-02",
+    "url": "https://zlsadesign.com/post/tom-mueller-interview-2017-05-02-transcription/",
+    "themes": "early engineering; cost; propulsion; technical decisions"
+  },
+  {
+    "id": "SX-018",
+    "tier": "P1/P2",
+    "title": "The Algorithm: SpaceX's Five-Step Process For Better Engineering",
+    "author": "Aviation Week / Tim Berry",
+    "date": "current",
+    "url": "https://aviationweek.com/space/commercial-space/algorithm-spacexs-five-step-process-better-engineering",
+    "themes": "The Algorithm; manufacturing; process deletion; cycle time"
+  },
+  {
+    "id": "SX-019",
+    "tier": "P1/P2",
+    "title": "Former SpaceX Engineer Breaks Down the Code to Successful Hardware Engineering",
+    "author": "Duro Labs / Kellan O'Connor",
+    "date": "current",
+    "url": "https://durolabs.co/blog/spacex-engineering/",
+    "themes": "design-analysis-build-test; in-house; propulsion; feedback loop"
+  },
+  {
+    "id": "SX-020",
+    "tier": "P1-transfer",
+    "title": "Lean Risk Management for Hardware Startups",
+    "author": "Lauren Lyons and vdot",
+    "date": "2025-09-10",
+    "url": "https://theresponsibleengineer.substack.com/p/lean-risk-management",
+    "themes": "risk ownership; lean risk tickets; approvals; safety-critical startups"
+  },
+  {
+    "id": "SX-021",
+    "tier": "P1V",
+    "title": "Lauren Lyons profile",
+    "author": "Creative Destruction Lab",
+    "date": "current",
+    "url": "https://creativedestructionlab.com/mentors/lauren-lyons/",
+    "themes": "author provenance; Crew Dragon; mission assurance; Medtronic"
+  },
+  {
+    "id": "SX-022",
+    "tier": "P1",
+    "title": "Garrett Reisman fireside chat",
+    "author": "Garrett Reisman / Wharton",
+    "date": "current",
+    "url": "https://fisher.wharton.upenn.edu/mt-for-life/garrett-reisman-mt90/",
+    "themes": "role fluidity; ownership; NASA-SpaceX interface"
+  },
+  {
+    "id": "SX-023",
+    "tier": "P1",
+    "title": "Garrett Reisman on SpaceX vs NASA culture",
+    "author": "Garrett Reisman interview",
+    "date": "2024",
+    "url": "https://armenpress.am/en/article/1139004",
+    "themes": "decision speed; vertical integration; NASA comparison; reversibility"
+  },
+  {
+    "id": "SX-024",
+    "tier": "P2",
+    "title": "Iterative Systems Engineering Handbook — Volume I",
+    "author": "Flow Engineering",
+    "date": "current",
+    "url": "https://www.flowengineering.com/handbook/iterative-systems-engineering/volume-1",
+    "themes": "iterative SE; ownership; requirements; culture; SpaceX examples"
+  },
+  {
+    "id": "SX-025",
+    "tier": "P2",
+    "title": "Iterative Systems Engineering Handbook — Volume II",
+    "author": "Flow Engineering",
+    "date": "current",
+    "url": "https://www.flowengineering.com/handbook/iterative-systems-engineering/volume-2",
+    "themes": "leadership; scoping; iterative management"
+  },
+  {
+    "id": "SX-026",
+    "tier": "P2",
+    "title": "Systems Engineering at SpaceX",
+    "author": "Valispace",
+    "date": "current",
+    "url": "https://www.valispace.com/systems-engineering-at-spacex/",
+    "themes": "Muratore synthesis; V-model; tools not rules"
+  },
+  {
+    "id": "SX-027",
+    "tier": "P2+",
+    "title": "Liftoff",
+    "author": "Eric Berger",
+    "date": "2021",
+    "url": "https://books.google.com/books/about/Liftoff.html?id=DQ7jDwAAQBAJ",
+    "themes": "Falcon 1 era; early team; failure; mission; scrappy engineering"
+  },
+  {
+    "id": "SX-028",
+    "tier": "P2+",
+    "title": "Reentry",
+    "author": "Eric Berger",
+    "date": "2024",
+    "url": "https://www.simonandschuster.com/books/Reentry/Eric-Berger/9781637745274",
+    "themes": "Falcon 9; Dragon; reuse; accidents; management costs"
+  },
+  {
+    "id": "SX-029",
+    "tier": "P1-support",
+    "title": "Applied Atomics team — Ben Kellie / Paul Keutelian",
+    "author": "Applied Atomics",
+    "date": "current",
+    "url": "https://www.appliedatomics.com/team",
+    "themes": "RE provenance; transfer to nuclear"
+  },
+  {
+    "id": "SX-030",
+    "tier": "P1",
+    "title": "Welcome to Anti-Hype",
+    "author": "Anti-Hype Hardware",
+    "date": "current",
+    "url": "https://newsletter.antihypehardware.com/p/welcome-to-anti-hype",
+    "themes": "hardware culture; anti-hype; cost of demanding career"
+  }
+]

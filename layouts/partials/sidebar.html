@@ -1,0 +1,6 @@
+<aside class="sidebar">
+  <div class="sidebar-title">Handbook</div>
+  {{ range (where site.RegularPages "Section" "handbook").ByWeight }}
+    <a class="{{ if eq $.RelPermalink .RelPermalink }}active{{ end }}" href="{{ .RelPermalink }}">{{ .Title }}</a>
+  {{ end }}
+</aside>
