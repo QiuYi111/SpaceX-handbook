@@ -1,7 +1,7 @@
 ---
 title: "10 · 内部软件与数字主线"
 weight: 15
-status: "v0.2"
+status: "v0.3"
 source_ids: ["SX-005","SX-007","SX-003"]
 summary: "软件不是 IT 支持层，而是制造系统本身。"
 ---
@@ -12,7 +12,9 @@ SpaceX 一个常被忽略的优势，不是火箭本身，而是**围绕物理�
 
 后来对 SpaceX 内部软件团队的采访进一步展示了 Warp Drive 一类系统：原材料、采购、库存、work order、制造、质量问题、变更和零件关系被放进同一条数字链。{{< source "SX-007" >}}
 
-NASA 的 COTS 复盘还记录了 SpaceX 用 Confluence、SharePoint、TRAC ticket 等工具支持知识、问题、变更、风险和异步 review。{{< source "SX-003" >}}
+NASA 的 COTS 复盘提供了更早、也更具体的一块证据：2013 年 deck 的 slide 16 记录 SpaceX 用 SharePoint / Confluence 承载团队流程和一般信息，用 TRAC ticket 管 issue、change、risk；在部分场景还以 FEM model + summary 代替大型结构分析报告。{{< source "SX-003" >}}
+
+这三份材料来自不同时期。它们能共同支持“SpaceX 长期重视内部数字系统和结构化工程对象”，但不能证明 2026 年仍使用同一套工具，也不能把 COTS 期 TRAC 直接等同于后来的 Warp Drive。
 
 ## 1. 软件不是“办公辅助”
 
@@ -56,6 +58,8 @@ SpaceX 式内部软件的价值，在于让物理产品和它的数字信息尽�
 
 而不是靠某个资深工程师记忆。
 
+注意：上面这张完整“数字主线”清单是本手册的迁移目标，不是来源声称 SpaceX 在某个时期已经把全部对象放进一个系统。
+
 ## 3. 软件工程师应该靠近真实工作
 
 Warp Drive 相关访谈里一个很值得学的细节，是软件工程师直接接近生产现场、理解工人真正怎样造卫星。{{< source "SX-007" >}}
@@ -74,7 +78,7 @@ Warp Drive 相关访谈里一个很值得学的细节，是软件工程师直接
 
 ## 4. Ticket 是工程对象，不只是待办
 
-NASA 观察到 SpaceX 用 TRAC ticket 支撑 issue、change、risk 和 virtual review。{{< source "SX-003" >}}
+NASA slide 16 观察到 SpaceX 用 TRAC ticket 支撑 issue、change、risk 和 virtual review：参与者能异步提问、评论，追踪讨论，最后收敛并签核。{{< source "SX-003" >}}
 
 ticket 的价值不是“任务管理”，而是把：
 
@@ -87,7 +91,7 @@ ticket 的价值不是“任务管理”，而是把：
 
 放到同一个可追踪对象里。
 
-于是很多 review 不需要靠会议记忆维持。
+其中“证据、owner、decision”等完整字段是本手册建议的工程对象结构；原始 NASA slide 直接支持的是 issue/change/risk、讨论、closure、签核这些功能，不应混成 SpaceX 官方 schema。
 
 ## 5. 一个好的工程 issue 应该自带上下文
 
