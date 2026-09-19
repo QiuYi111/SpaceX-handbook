@@ -19,6 +19,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      pages_status: ${{ steps.pages.outcome }}
     steps:
       - uses: actions/checkout@v4
       - uses: peaceiris/actions-hugo@v3
@@ -26,17 +28,19 @@ jobs:
           hugo-version: latest
           extended: true
       - run: hugo --minify --baseURL "https://qiuyi111.github.io/SpaceX-handbook/"
-      - if: github.event_name == 'push'
+      - id: pages
+        if: github.event_name == 'push'
+        continue-on-error: true
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - if: github.event_name == 'push'
+      - if: github.event_name == 'push' && steps.pages.outcome == 'success'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+      - if: github.event_name == 'push' && steps.pages.outcome != 'success'
+        run: echo "Pages is not enabled yet. Enable Settings > Pages > Build and deployment > GitHub Actions, then rerun this workflow."
 
   deploy:
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' && needs.build.outputs.pages_status == 'success'
     environment:
       name: github-pages
     runs-on: ubuntu-latest
