@@ -1,0 +1,16 @@
+baseURL = "https://qiuyi111.github.io/SpaceX-handbook/"
+languageCode = "zh-cn"
+title = "SpaceX Engineering Handbook"
+enableRobotsTXT = true
+
+[params]
+  description = "基于公开资料重建的 SpaceX 工程方法手册"
+  github = "https://github.com/QiuYi111/SpaceX-handbook"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[taxonomies]
+  theme = "themes"
+  stage = "stages"
+  evidence = "evidence"

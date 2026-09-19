@@ -1,0 +1,4 @@
+{{ $id := . }}
+{{ range site.Data.sources }}
+  {{ if eq .id $id }}<a class="source-chip tier-{{ lower .tier }}" href="{{ .url }}" target="_blank" rel="noopener">{{ .id }} · {{ .tier }}</a>{{ end }}
+{{ end }}

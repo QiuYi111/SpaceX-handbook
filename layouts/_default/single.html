@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article>
+  <div class="eyebrow">{{ .Section }}</div>
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.status }}<div class="status">状态：{{ . }}</div>{{ end }}
+  {{ with .Params.source_ids }}
+  <div class="source-strip">
+    <strong>主要来源：</strong>
+    {{ range . }}{{ partial "source-link.html" . }} {{ end }}
+  </div>
+  {{ end }}
+  {{ .Content }}
+</article>
+{{ end }}

@@ -1,0 +1,12 @@
+<div class="source-list">
+{{ range site.Data.sources }}
+  <div class="source-row" id="{{ .id }}">
+    <div><span class="source-chip tier-{{ lower .tier }}">{{ .id }} · {{ .tier }}</span></div>
+    <div>
+      <a href="{{ .url }}" target="_blank" rel="noopener"><strong>{{ .title }}</strong></a>
+      <div class="muted">{{ .author }} · {{ .date }}</div>
+      <div>{{ .themes }}</div>
+    </div>
+  </div>
+{{ end }}
+</div>
