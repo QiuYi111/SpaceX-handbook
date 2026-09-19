@@ -1,6 +1,7 @@
-name: Deploy Hugo to GitHub Pages
+name: Build and deploy Hugo
 
 on:
+  pull_request:
   push:
     branches:
       - master
@@ -12,8 +13,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -25,12 +26,15 @@ jobs:
           hugo-version: latest
           extended: true
       - run: hugo --minify --baseURL "https://qiuyi111.github.io/SpaceX-handbook/"
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - if: github.event_name == 'push'
+        uses: actions/configure-pages@v5
+      - if: github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
   deploy:
+    if: github.event_name == 'push'
     environment:
       name: github-pages
     runs-on: ubuntu-latest
