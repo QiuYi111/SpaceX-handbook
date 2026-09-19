@@ -1,5 +1,5 @@
 <div class="source-list">
-{{ range site.Data.sources }}
+{{ range hugo.Data.sources }}
   <div class="source-row" id="{{ .id }}">
     <div><span class="source-chip tier-{{ lower .tier }}">{{ .id }} · {{ .tier }}</span></div>
     <div>
