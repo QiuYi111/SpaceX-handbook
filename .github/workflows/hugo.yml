@@ -23,6 +23,8 @@ jobs:
       pages_status: ${{ steps.pages.outcome }}
     steps:
       - uses: actions/checkout@v4
+      - name: Check source-note mirrors
+        run: python scripts/check_source_mirrors.py
       - uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: latest
