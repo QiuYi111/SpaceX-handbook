@@ -14,7 +14,7 @@
         {{ with .Params.tier }}<span class="source-chip">{{ . }}</span>{{ end }}
         {{ with .Params.access }}<span class="muted">{{ . }}</span>{{ end }}
       </div>
-      {{ with .Params.url }}<a class="button source-open" href="{{ . }}" target="_blank" rel="noopener">打开原始资料 ↗</a>{{ end }}
+      {{ with .Params.external_url }}<a class="button source-open" href="{{ . }}" target="_blank" rel="noopener">打开原始资料 ↗</a>{{ end }}
     </div>
   {{ else }}
     {{ with .Params.status }}<div class="status">状态：{{ . }}</div>{{ end }}
