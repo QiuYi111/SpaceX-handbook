@@ -13,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-${{ github.ref }}
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -28,6 +28,8 @@ jobs:
       - run: hugo --minify --baseURL "https://qiuyi111.github.io/SpaceX-handbook/"
       - if: github.event_name == 'push'
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - if: github.event_name == 'push'
         uses: actions/upload-pages-artifact@v3
         with:
