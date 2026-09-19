@@ -1,4 +1,9 @@
 {{ $id := . }}
 {{ range hugo.Data.sources }}
-  {{ if eq .id $id }}<a class="source-chip tier-{{ lower .tier }}" href="{{ .url }}" target="_blank" rel="noopener">{{ .id }} · {{ .tier }}</a>{{ end }}
+  {{ if eq .id $id }}
+    <span class="source-cite">
+      <a class="source-chip tier-{{ lower .tier }}" href="{{ printf "sources/%s/" (lower .id) | relURL }}">{{ .id }} · {{ .tier }}</a>
+      <a class="source-external" href="{{ .url }}" target="_blank" rel="noopener" aria-label="打开原始资料">↗</a>
+    </span>
+  {{ end }}
 {{ end }}

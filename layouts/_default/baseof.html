@@ -8,15 +8,13 @@
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
   {{ partial "header.html" . }}
   <div class="shell">
     {{ partial "sidebar.html" . }}
-    <main class="content">
-      {{ block "main" . }}{{ end }}
-    </main>
+    <main class="content">{{ block "main" . }}{{ end }}</main>
   </div>
-  <footer>
-    非 SpaceX 官方项目。事实、解释与公司制度应分层使用。 · <a href="{{ site.Params.github }}">GitHub</a>
-  </footer>
+  <footer>非 SpaceX 官方项目。事实、解释与公司制度应分层使用。 · <a href="{{ site.Params.github }}">GitHub</a></footer>
+  <script src="{{ "js/site.js" | relURL }}"></script>
 </body>
 </html>
