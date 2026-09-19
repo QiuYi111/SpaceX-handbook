@@ -3,10 +3,10 @@
   <div class="source-row" id="{{ .id }}">
     <div><span class="source-chip tier-{{ lower .tier }}">{{ .id }} · {{ .tier }}</span></div>
     <div>
-      <a href="{{ .url }}" target="_blank" rel="noopener"><strong>{{ .title }}</strong></a>
+      <a href="{{ printf "sources/%s/" (lower .id) | relURL }}"><strong>{{ .title }}</strong></a>
       <div class="muted">{{ .author }} · {{ .date }}</div>
       <div>{{ .themes }}</div>
-      <div class="muted"><a href="https://github.com/QiuYi111/SpaceX-handbook/blob/master/research/sources/{{ .id }}.md">研究笔记</a></div>
+      <div class="source-actions"><a href="{{ printf "sources/%s/" (lower .id) | relURL }}">研究笔记</a><a href="{{ .url }}" target="_blank" rel="noopener">原始资料 ↗</a></div>
     </div>
   </div>
 {{ end }}
