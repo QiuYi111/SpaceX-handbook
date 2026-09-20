@@ -1,0 +1,10 @@
+<div class="source-list">
+{{ range hugo.Data.sources }}
+  <article class="source-entry">
+    <div class="source-kicker">{{ .id }} · {{ .tier }} · {{ .author }} · {{ .date }}</div>
+    <h3><a href="{{ printf "sources/%s/" (lower .id) | relURL }}">{{ .title }}</a></h3>
+    <p>{{ .themes }}</p>
+    <p class="source-actions"><a href="{{ printf "sources/%s/" (lower .id) | relURL }}">研究笔记</a> · <a href="{{ .url }}" target="_blank" rel="noopener">原始资料 ↗</a></p>
+  </article>
+{{ end }}
+</div>
