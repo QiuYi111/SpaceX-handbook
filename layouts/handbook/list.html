@@ -1,0 +1,49 @@
+{{ define "main" }}
+<article>
+  <div class="eyebrow">Reading map</div>
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <section class="reading-map" aria-labelledby="reading-path-title">
+    <h2 id="reading-path-title">四条阅读路径</h2>
+    <p class="muted reading-map-intro">不必从头背到尾。按你现在最需要解决的问题进入。</p>
+    <div class="path-grid">
+      <a class="path-card" href="{{ "handbook/01-responsibility/" | relURL }}">
+        <span class="path-kicker">01 → 07</span>
+        <strong>工程闭环</strong>
+        <span>Responsibility → Requirements → Algorithm → Systems → Build/Test → Risk</span>
+      </a>
+      <a class="path-card" href="{{ "handbook/08-manufacturing/" | relURL }}">
+        <span class="path-kicker">08 → 11 → 15</span>
+        <strong>制造与信息系统</strong>
+        <span>制造 → Make/Buy → Digital Thread → Async Work → Cost/Throughput</span>
+      </a>
+      <a class="path-card" href="{{ "handbook/12-leadership/" | relURL }}">
+        <span class="path-kicker">12 → 16</span>
+        <strong>组织与成熟度</strong>
+        <span>Leadership → People → Process Maturity → Culture Costs</span>
+      </a>
+      <a class="path-card" href="{{ "handbook/99-medtech-transfer/" | relURL }}">
+        <span class="path-kicker">迁移专题</span>
+        <strong>医疗器械</strong>
+        <span>把 ownership、测试和反馈环放进患者安全、法规与正式证据链。</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="chapter-catalog" aria-labelledby="chapter-catalog-title">
+    <h2 id="chapter-catalog-title">全书目录</h2>
+    <div class="cards chapter-cards">
+      {{ range .Pages.ByWeight }}
+        <a class="card chapter-card" href="{{ .RelPermalink }}">
+          <div class="chapter-card-top">
+            <strong>{{ .Title }}</strong>
+            {{ with .Params.status }}<span class="status-pill">{{ . }}</span>{{ end }}
+          </div>
+          {{ with .Params.summary }}<span>{{ . }}</span>{{ end }}
+        </a>
+      {{ end }}
+    </div>
+  </section>
+</article>
+{{ end }}
