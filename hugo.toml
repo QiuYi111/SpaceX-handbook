@@ -1,5 +1,4 @@
 baseURL = "https://qiuyi111.github.io/SpaceX-handbook/"
-languageCode = "zh-CN"
 locale = "zh-CN"
 title = "SpaceX Engineering Handbook"
 enableRobotsTXT = true
@@ -31,6 +30,9 @@ pluralizeListTitles = false
   endLevel = 4
   ordered = false
 
+[security.funcs]
+  getenv = ["^HUGO_", "^CI$", "PERISCOPE_EMBED_API_KEY", "PUBLIC_HANDBOOK_REF"]
+
 [module]
   proxy = "https://proxy.golang.org"
 
@@ -40,6 +42,17 @@ pluralizeListTitles = false
 
 [[module.imports]]
   path = "gitlab.com/gitlab-com/content-sites/docsy-gitlab"
+  ignoreConfig = true
+
+  [[module.imports.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.imports.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.imports.mounts]]
+    source = "static"
+    target = "static"
 
 [[module.imports]]
   path = "github.com/google/docsy/theme"
