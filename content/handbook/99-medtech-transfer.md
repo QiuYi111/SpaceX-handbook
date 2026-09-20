@@ -1,7 +1,7 @@
 ---
 title: "99 · 医疗器械迁移边界"
 weight: 99
-status: "v0.3 · important"
+status: "v0.4 · important"
 source_ids: ["SX-008","SX-013","SX-020","SX-021"]
 summary: "速度原则必须放在患者安全、法规和设计控制之内。"
 ---
@@ -126,7 +126,65 @@ Lauren Lyons 同时有 Medtronic 与 SpaceX/Crew Dragon 背景。她后来提出
 - 需要进入正式 risk file 的内容自动/定期同步；
 - 每条 safety control 可追到 verification evidence。
 
-## 6. Process maturity 可以分层
+## 6. 一个完整迁移例子：工程 ticket 不能替代正式证据链
+
+下面用一个**抽象示例**说明。假设一个植入式刺激系统要修改刺激控制软件或相关硬件接口。这里不讨论具体治疗参数，只讨论工程对象如何流动。
+
+### 第一步：工程 issue
+
+先在日常工程系统里记录：
+
+- 为什么要改；
+- 当前 failure / limitation 的证据；
+- owner；
+- 可能方案；
+- 预计影响哪些 requirement / interface。
+
+这里追求的是**低摩擦和高信噪**。
+
+### 第二步：识别是否触碰正式风险对象
+
+如果 change 可能影响 safety control、hazard、关键性能或既有验证结论，就不能只留在工程 ticket。
+
+需要把它链接到正式风险对象，并明确：
+
+- 哪个 hazard / risk control 受影响；
+- residual risk 是否变化；
+- 是否需要新的 mitigation；
+- 谁拥有 acceptance authority。
+
+这与 Lyons 的 lean risk ticket 思路兼容，但 risk ticket 本身不能偷偷取代正式风险体系。{{< source "SX-020" >}}
+
+### 第三步：建立验证证据
+
+change 不能以“代码 merge / CAD release”作为完成。
+
+应明确需要哪些层级的证据，例如：
+
+- simulation；
+- regression；
+- benchtop；
+- HITL；
+- real hardware；
+- 正式 verification。
+
+SpaceX 2021 软件测试公开材料里，安全关键 change 就体现了类似的“额外 gate + merge 后继续 test + verification”分层。{{< source "SX-008" >}}
+
+### 第四步：配置与正式 release
+
+当证据足够，才进入受控 configuration / release。
+
+所以完整链路不是：
+
+> ticket → Done
+
+而应该是：
+
+> **engineering issue → risk impact → verification evidence → controlled release**
+
+其中每一段都能快，但不能互相替代。
+
+## 7. Process maturity 可以分层
 
 这不是纯理论类比。前 SpaceX 工程师 Chris Hansen 转到核能公司 Radiant 后，仍明确把 **detailed analysis、rigorous testing、validation** 视为安全硬件的必要工作，同时要求工程师端到端拥有 subsystem / component，并在 startup agility 与监管所需文档之间找平衡。{{< source "SX-013" >}}
 
@@ -164,7 +222,7 @@ clinical / production：
 
 > 早期被成熟 QMS 压死，后期还在裸奔。
 
-## 7. 测试哲学非常适合迁移
+## 8. 测试哲学非常适合迁移
 
 SpaceX 软件测试资料最值得医疗器械学：
 
@@ -189,7 +247,7 @@ SpaceX 软件测试资料最值得医疗器械学：
 - preclinical；
 - formal V&V。
 
-## 8. Vertical integration 要谨慎
+## 9. Vertical integration 要谨慎
 
 SpaceX 高度内制，但医疗供应商常常带来：
 
@@ -209,7 +267,7 @@ SpaceX 高度内制，但医疗供应商常常带来：
 - change notification；
 - process capability。
 
-## 9. Agent 可以做什么
+## 10. Agent 可以做什么
 
 适合 Agent：
 
@@ -230,7 +288,13 @@ SpaceX 高度内制，但医疗供应商常常带来：
 - final design approval；
 - regulatory accountability。
 
-## 10. 最重要的一句话
+一个实用原则是：
+
+> **Agent 可以自动搬运、检查、关联 evidence；不能成为 evidence 的责任主体。**
+
+也就是说，Agent 可以发现“这个 change 影响了 6 条 requirement、2 个 risk control、3 个 test”，但最后接受残余风险、批准设计和承担监管责任的，仍必须是明确的人和正式角色。
+
+## 11. 最重要的一句话
 
 我们不是要把医疗器械公司变成“会炸东西的 SpaceX”。
 
