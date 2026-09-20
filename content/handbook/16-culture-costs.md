@@ -2,7 +2,7 @@
 title: "16 · 文化代价与反模式"
 weight: 21
 status: "v0.3"
-source_ids: ["SX-010","SX-012","SX-015","SX-016","SX-027","SX-028","SX-030"]
+source_ids: ["SX-010","SX-012","SX-015","SX-027","SX-028","SX-030"]
 summary: "不要把高压和长工时误认成工程方法本身。"
 ---
 
@@ -16,13 +16,9 @@ summary: "不要把高压和长工时误认成工程方法本身。"
 
 Ben Kellie 对 Vandenberg 建设的第一人称回顾写到，团队经历约 18 个月 non-stop sprint；他把这段成长描述为彻底重塑自己，但也明确说代价很高。{{< source "SX-012" >}}
 
-他后来创办 Anti-Hype Hardware 时，又把自己另一条写作线明确描述成反思：
+他后来在 2024 年 Anti-Hype Hardware 的开篇文章里说，自己另一份 memoir 正在讨论：当 demanding career 成为生活唯一中心时会发生什么，以及之后如何恢复生活。{{< source "SX-030" >}}
 
-> 当 demanding career 成为生活唯一中心，会发生什么？
-
-{{< source "SX-030" >}}
-
-这不是旁枝。
+这里要守住边界：这是 Kellie 对**自己整个硬件职业生涯**的反思，不是“SpaceX 普遍导致 burnout”的调查证据。SpaceX Vandenberg 的 17 小时 shift、18 个月 sprint 等具体经历，应回到他的项目回顾 SX-012。
 
 它应该成为任何“学习 SpaceX”项目的硬边界。
 
