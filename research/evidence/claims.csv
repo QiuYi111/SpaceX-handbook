@@ -25,3 +25,4 @@ C023,SpaceX 的速度有明显人力代价；极端长工时不应被误写成�
 C024,NASA 与 SpaceX 的决策速度差异部分来自错误代价合同组织结构和可逆性。,strong,SX-023;SX-003
 C025,Lean Risk Ticket 是前 SpaceX 人员给 startup 的迁移方案，不是已证实的 SpaceX 内部原样流程。,very strong,SX-020;SX-021
 C026,Flow Handbook 是二次综合，具体 SpaceX 断言需回一手来源核验。,very strong,SX-024;SX-025;SX-002
+C027,2011 年 GAO 记录 SpaceX COTS 第一场演示任务晚 18 个月且后续演示接近两年延期，原因横跨软件供应生产测试与安全批准。,very strong,SX-031
