@@ -1,7 +1,7 @@
 ---
 title: "12 · 决策、沟通与领导"
 weight: 17
-status: "v0.3"
+status: "v0.4"
 source_ids: ["SX-009","SX-010","SX-015","SX-016","SX-022","SX-023"]
 summary: "领导的核心之一，是缩短正确的人做决定的路径。"
 ---
@@ -45,7 +45,24 @@ Santi 的 RE 总结里有一条很重要：运行一群高自主 RE 不是“放
 
 如果员工遇到难题时不愿意找 leader，往往说明升级路径太慢、太政治化或太不可预测。
 
-## 3. Scope 应该跟着结果，而不是职位边界
+## 3. 真实案例：40 周 lead time 不是“采购的问题”
+
+Santi 的 RE 文章给了一个很有用的案例：某个 valve 因保守 requirement 与 heritage 选择，供应周期被拉到约 **40 周**。处理方式不是让 leader 直接拍板“换供应商”，也不是让项目经理单纯压日期，而是让负责结果的 RE 回到 requirement、tolerance、supplier capability 和 test plan 重新 trade。{{< source "SX-010" >}}
+
+这个案例揭示了领导在高 ownership 组织里的位置：
+
+- 不替 RE 做全部技术判断；
+- 但要给 RE 足够 authority 去改 requirement、资源和路径；
+- 同时保留采购阈值、design review、risk tracking 等 guardrail；
+- 当 trade 跨越多个团队或风险边界时，leader 提供快速升级和最终裁决。
+
+因此“扁平”真正减少的是**不必要的决策路由**，不是把控制全部删除。
+
+它也给出一个反例：
+
+> **如果 owner 只能为结果负责，却无权改变导致结果失败的 requirement、预算或接口，那不是 ownership，只是责任下放。**
+
+## 4. Scope 应该跟着结果，而不是职位边界
 
 Reisman 在 2023 年回顾自己加入 SpaceX 时说，第一天实际工作就和原先预想不同：公司刚投了 NASA 合同，如果拿到就由他负责。之后几年，他先后承担 human space flight、proposal、space operations 等不同范围的领导工作。{{< source "SX-022" >}}
 
@@ -55,7 +72,7 @@ Reisman 在 2023 年回顾自己加入 SpaceX 时说，第一天实际工作就�
 
 但要守住样本边界：Reisman 是高级领导岗位，不能据此推出“SpaceX 所有人都没有 job description”。
 
-## 4. 领导者不应该成为信息总线
+## 5. 领导者不应该成为信息总线
 
 坏结构：
 
@@ -71,7 +88,7 @@ Engineer A + B → leader 做系统级裁决
 
 前者看起来“管理清晰”，但每层都会丢细节、增加等待。
 
-## 5. 案例：Starlink 的领导组合
+## 6. 案例：Starlink 的领导组合
 
 Akella 回顾 Starlink 时特别提到 Mark Juncosa 的作用：既有高层信任，又能在规模化阶段持续做收敛；与此同时，团队内部仍然存在大量激烈争论。{{< source "SX-015" >}}
 
@@ -81,7 +98,7 @@ Akella 回顾 Starlink 时特别提到 Mark Juncosa 的作用：既有高层信�
 
 > **允许技术冲突发生，但不能让冲突无限拖延。**
 
-## 6. Mission 是一种决策压缩器
+## 7. Mission 是一种决策压缩器
 
 如果组织顶层目标稳定，很多争论不需要 CEO 亲自判断。
 
@@ -100,7 +117,7 @@ B：性能低一点，但能迅速放量。
 
 而不是替团队做每个技术选择。
 
-## 7. First principles 不等于反专家
+## 8. First principles 不等于反专家
 
 SpaceX 常强调 first principles，但 Starlink 的成功材料同样显示大量成熟专家不可替代。{{< source "SX-015" >}}
 
@@ -118,7 +135,7 @@ SpaceX 常强调 first principles，但 Starlink 的成功材料同样显示大�
 
 > **尊重经验提供的先验，同时要求它能接受证据和推理挑战。**
 
-## 8. 一个 leader 的日常工作清单
+## 9. 一个 leader 的日常工作清单
 
 比起“检查大家有没有干活”，更应该持续问：
 
@@ -130,7 +147,7 @@ SpaceX 常强调 first principles，但 Starlink 的成功材料同样显示大�
 - 哪个风险需要我来接受？
 - 哪个团队正在为了局部 KPI 伤害全局？
 
-## 9. 反模式
+## 10. 反模式
 
 ### Founder as CPU
 
@@ -150,7 +167,7 @@ SpaceX 常强调 first principles，但 Starlink 的成功材料同样显示大�
 
 唯一管理动作就是把日期往前拉。
 
-## 10. AI-native 时代的领导
+## 11. AI-native 时代的领导
 
 Agent 会让信息产出暴涨。
 
