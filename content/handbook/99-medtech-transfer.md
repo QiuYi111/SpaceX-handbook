@@ -2,7 +2,7 @@
 title: "99 · 医疗器械迁移边界"
 weight: 99
 status: "v0.3 · important"
-source_ids: ["SX-002","SX-004","SX-008","SX-013","SX-020","SX-021","SX-023"]
+source_ids: ["SX-008","SX-013","SX-020","SX-021"]
 summary: "速度原则必须放在患者安全、法规和设计控制之内。"
 ---
 
