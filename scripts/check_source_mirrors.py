@@ -13,7 +13,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 RESEARCH = ROOT / "research" / "sources"
 SITE = ROOT / "content" / "sources"
-AUDITED_IDS = [f"SX-{i:03d}" for i in range(1, 25)]
+AUDITED_IDS = [f"SX-{i:03d}" for i in range(1, 31)]
 
 
 def split_note(path: Path, research: bool):
