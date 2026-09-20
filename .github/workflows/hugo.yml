@@ -30,6 +30,8 @@ jobs:
           hugo-version: latest
           extended: true
       - run: hugo --minify --baseURL "https://qiuyi111.github.io/SpaceX-handbook/"
+      - name: Check rendered internal links
+        run: python scripts/check_internal_links.py public --prefix /SpaceX-handbook/
       - id: pages
         if: github.event_name == 'push'
         continue-on-error: true
