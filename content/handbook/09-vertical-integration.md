@@ -32,7 +32,27 @@ Muratore 2012 的材料给出更早期的系统原因：减少 contract/subcontr
 
 NASA COTS 观察补充了经济原因：某些部件外部采购价格高，而内部制造还能改善进度控制和变更速度。{{< source "SX-003" >}}
 
-## 2. 一条很具体的公开 Make / Buy 记录
+## 2. 三个时期的纵向证据：内制比例不能直接比，但工程逻辑连续
+
+公开材料给了三个不同时间点：
+
+| 时期 | 公开材料 | 能支持的结论 |
+|---|---|---|
+| 2012 | Muratore 称当时火箭 **>70% dry mass** 在内部从原材料制造 | 减少 contract/subcontract 边界，有利于设计参数快速 trade {{< source "SX-002" >}} |
+| COTS 合作期 | NASA 观察到部分外购件太贵时 SpaceX 会转内制 | 内制同时购买 cost、schedule control 和更直接的 change/update {{< source "SX-003" >}} |
+| 2026 | S-1/A 自报 Starship 约 **80% internal manufacturing** | 公司仍把高度垂直整合与迭代速度、成本和质量控制绑定 {{< source "SX-001" >}} |
+
+这三条不能机械画成一条“内制比例上升曲线”：
+
+- 2012 是 Falcon 语境下的 dry mass；
+- 2026 是 Starship 的公司披露；
+- NASA COTS 是项目观察，不给统一比例。
+
+但它们跨十多年共同支持一个更稳妥的结论：
+
+> **当外部边界显著拖慢参数 trade、变更或学习时，把关键环节拉进内部反馈环，是 SpaceX 长期重复出现的选择。**
+
+## 3. 一条很具体的公开 Make / Buy 记录
 
 NASA 的 COTS lessons-learned **slide 15** 没有只说“SpaceX 很垂直整合”，而是记录了一条很具体的决策模式。{{< source "SX-003" >}}
 
@@ -53,7 +73,7 @@ NASA 的观察是：
 
 > **公开资料能证明决策逻辑，往往不能证明每次决策的完整财务结果。**
 
-## 3. 垂直整合真正购买的是什么
+## 4. 垂直整合真正购买的是什么
 
 最浅的理解是：
 
@@ -77,7 +97,7 @@ Garrett Reisman 比较 NASA 与 SpaceX 时也给了类似解释：SpaceX 能够�
 
 这里最后一句是本手册对前述材料的解释，不是 SpaceX 官方术语。
 
-## 4. Make / Buy 应该比较什么
+## 5. Make / Buy 应该比较什么
 
 不要只问：
 
@@ -134,7 +154,7 @@ Garrett Reisman 比较 NASA 与 SpaceX 时也给了类似解释：SpaceX 能够�
 
 这张卡片是迁移工具，不是 SpaceX 已公开的内部模板。
 
-## 5. Tom Mueller：控制 cost、schedule、quality
+## 6. Tom Mueller：控制 cost、schedule、quality
 
 Tom Mueller 后来创办 Impulse Space 时仍然把 vertical integration 当作核心差异，理由很直接：更紧地控制 cost、schedule、service quality。{{< source "SX-016" >}}
 
@@ -144,7 +164,7 @@ Tom Mueller 后来创办 Impulse Space 时仍然把 vertical integration 当作�
 
 控制力只有在内部团队真的具备相应能力时才有价值。
 
-## 6. 什么东西最值得内制
+## 7. 什么东西最值得内制
 
 优先考虑：
 
@@ -168,7 +188,7 @@ Tom Mueller 后来创办 Impulse Space 时仍然把 vertical integration 当作�
 
 例如独特焊接、测试、精密装配、自动化工装。SpaceX 在 S-1/A 里甚至把制造工具本身纳入内部能力。{{< source "SX-001" >}}
 
-## 7. 什么不值得内制
+## 8. 什么不值得内制
 
 - 成熟标准件；
 - 不影响迭代速度；
@@ -180,7 +200,7 @@ Tom Mueller 后来创办 Impulse Space 时仍然把 vertical integration 当作�
 
 垂直整合的目标不是“纯血”，而是系统最优。
 
-## 8. 一个反例：自研成瘾
+## 9. 一个反例：自研成瘾
 
 创业公司很容易说：
 
@@ -204,7 +224,7 @@ Tom Mueller 后来创办 Impulse Space 时仍然把 vertical integration 当作�
 
 如果答案是否定的，外购通常更合理。
 
-## 9. 供应商也可以成为“半内部反馈环”
+## 10. 供应商也可以成为“半内部反馈环”
 
 Make / Buy 不是二元。
 
@@ -222,7 +242,7 @@ Make / Buy 不是二元。
 
 这一节是本手册的迁移建议，不是对 SpaceX 供应商制度的事实陈述。
 
-## 10. 医疗器械特别注意
+## 11. 医疗器械特别注意
 
 医疗器械供应商往往同时承担：
 

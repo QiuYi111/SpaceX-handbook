@@ -1,6 +1,21 @@
-<div class="source-list">
+<div class="source-tools" aria-label="来源筛选">
+  <label class="source-search-label" for="source-search">搜索来源</label>
+  <input id="source-search" class="source-search" type="search" placeholder="编号、标题、作者、主题…" autocomplete="off">
+  <label class="source-tier-label" for="source-tier">证据等级</label>
+  <select id="source-tier" class="source-tier">
+    <option value="">全部</option>
+    <option value="P0">P0</option>
+    <option value="P1">P1</option>
+    <option value="P2">P2</option>
+  </select>
+  <span id="source-count" class="source-count" aria-live="polite">30 / 30</span>
+</div>
+<div class="source-list" id="source-list">
 {{ range hugo.Data.sources }}
-  <div class="source-row" id="{{ .id }}">
+  <div class="source-row"
+       id="{{ .id }}"
+       data-tier="{{ .tier }}"
+       data-search="{{ lower (printf "%s %s %s %s %s %s" .id .tier .title .author .date .themes) }}">
     <div><span class="source-chip tier-{{ lower .tier }}">{{ .id }} · {{ .tier }}</span></div>
     <div>
       <a href="{{ printf "sources/%s/" (lower .id) | relURL }}"><strong>{{ .title }}</strong></a>

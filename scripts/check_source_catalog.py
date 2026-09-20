@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Validate the source catalog against source-note front matter.
+"""Validate the public source catalog against source-note front matter.
 
 The site keeps source metadata in two places:
 - data/sources.json drives citation/source-list rendering;
 - content/sources/sx-*.md stores research notes and their external_url.
 
-A mismatch can silently produce a broken external citation even when the note
-itself is correct. This check keeps the two representations synchronized.
+This guard prevents metadata drift, malformed catalog entries, and floating
+source dates from silently reaching citations or the source index.
 """
 
 from __future__ import annotations
@@ -21,8 +21,10 @@ CATALOG = ROOT / "data" / "sources.json"
 NOTES = ROOT / "content" / "sources"
 SOURCE_INDEX = NOTES / "_index.md"
 
+EXPECTED_IDS = [f"SX-{i:03d}" for i in range(1, 31)]
 ID_RE = re.compile(r"^SX-\d{3}$")
 COUNT_RE = re.compile(r"收录目前使用的 \*\*(\d+) 个主要来源\*\*")
+REQUIRED_FIELDS = {"id", "tier", "title", "author", "date", "url", "themes"}
 ALLOWED_TIERS = {
     "P0",
     "P0*",
@@ -69,9 +71,14 @@ def main() -> int:
         print("Source catalog check failed: data/sources.json must contain a list")
         return 1
 
+    if len(catalog) != 30:
+        errors.append(f"catalog: expected 30 entries, found {len(catalog)}")
+
     ids = [item.get("id") for item in catalog if isinstance(item, dict)]
     if len(ids) != len(set(ids)):
         errors.append("data/sources.json contains duplicate source ids")
+    if ids != EXPECTED_IDS:
+        errors.append("catalog IDs must be exactly SX-001..SX-030 in order")
 
     known: dict[str, dict[str, str]] = {}
     for index, item in enumerate(catalog, start=1):
@@ -80,8 +87,18 @@ def main() -> int:
             continue
 
         source_id = item.get("id", "")
+        missing = sorted(REQUIRED_FIELDS - set(item))
+        if missing:
+            errors.append(f"{source_id or f'item #{index}'}: missing fields: {', '.join(missing)}")
+            continue
+
+        empty = sorted(k for k in REQUIRED_FIELDS if not str(item.get(k, "")).strip())
+        if empty:
+            errors.append(f"{source_id}: empty fields: {', '.join(empty)}")
+
         tier = item.get("tier", "")
         url = item.get("url", "")
+        date = str(item.get("date", "")).strip()
 
         if not ID_RE.fullmatch(source_id):
             errors.append(f"catalog item #{index}: invalid id {source_id!r}")
@@ -90,6 +107,8 @@ def main() -> int:
             errors.append(f"{source_id}: unsupported tier {tier!r}")
         if not isinstance(url, str) or not url.startswith("https://"):
             errors.append(f"{source_id}: url must be an https URL")
+        if date.lower() == "current":
+            errors.append(f"{source_id}: floating date 'current' is not allowed")
 
         known[source_id] = item
 
@@ -113,6 +132,7 @@ def main() -> int:
         comparisons = {
             "id": expected.get("id", ""),
             "tier": expected.get("tier", ""),
+            "title": expected.get("title", ""),
             "external_url": expected.get("url", ""),
         }
         for field, expected_value in comparisons.items():
