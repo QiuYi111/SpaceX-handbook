@@ -23,7 +23,7 @@ NOTES = ROOT / "content" / "sources"
 SOURCE_INDEX = NOTES / "_index.md"
 
 ID_RE = re.compile(r"^SX-\d{3}$")
-COUNT_RE = re.compile(r"收录目前使用的 \*\*(\d+) 个主要来源\*\*")
+COUNT_RE = re.compile(r"(?:目前收录|收录目前使用的) \*\*(\d+) 个主要来源\*\*")
 REQUIRED_FIELDS = {"id", "tier", "title", "author", "date", "url", "themes"}
 ALLOWED_TIERS = {
     "P0",
@@ -158,6 +158,8 @@ def main() -> int:
             errors.append(
                 f"{SOURCE_INDEX}: says {match.group(1)} sources, catalog has {len(catalog)}"
             )
+        if not match:
+            errors.append(f"{SOURCE_INDEX}: source count sentence is missing or unrecognized")
 
     if errors:
         print("Source catalog check failed:")
