@@ -2,7 +2,7 @@
 title: "13 · 人员与团队"
 weight: 18
 status: "v0.3"
-source_ids: ["SX-009","SX-012","SX-014","SX-015","SX-016","SX-017","SX-019"]
+source_ids: ["SX-009","SX-012","SX-015","SX-016","SX-017","SX-019"]
 summary: "小团队、强 owner、专家与高成长工程师混合。"
 ---
 
