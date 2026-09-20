@@ -2,7 +2,7 @@
 title: "14 · 流程随成熟度增长"
 weight: 19
 status: "v0.3"
-source_ids: ["SX-002","SX-004","SX-006","SX-008","SX-013","SX-021","SX-023","SX-025"]
+source_ids: ["SX-002","SX-004","SX-006","SX-008","SX-013","SX-023","SX-025"]
 summary: "开发样机、资格验证、生产和载人任务不能用一套流程。"
 ---
 
@@ -129,6 +129,8 @@ startup 常见错误：
 当组织进入重复生产，隐性知识必须逐步变成显性控制。
 
 ## 6. regulated hardware 仍可迭代
+
+Garrett Reisman 对 NASA–SpaceX 合作的回顾提供了另一个边界：他认为 NASA 的安全与复杂系统经验帮助 SpaceX 变得更成熟，而 SpaceX 的速度也反过来影响 NASA。也就是说，**成熟度增长不必等同于把反馈环拉长**。{{< source "SX-023" >}}
 
 Chris Hansen 从 SpaceX 去 Radiant 后明确说，核系统仍需要 detailed analysis、rigorous testing、validation，只是他把快速学习、跨专业和 hands-on 方法迁移过去。{{< source "SX-013" >}}
 
