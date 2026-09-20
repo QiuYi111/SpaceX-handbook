@@ -1,8 +1,8 @@
 ---
 title: "15 · 成本、周期与吞吐"
 weight: 20
-status: "v0.4"
-source_ids: ["SX-001","SX-003","SX-004","SX-014","SX-016","SX-018"]
+status: "v0.5"
+source_ids: ["SX-001","SX-003","SX-004","SX-010","SX-014","SX-016","SX-018"]
 summary: "成本与周期从一开始就是工程变量。"
 ---
 
@@ -50,7 +50,28 @@ NASA COTS 2013 年复盘的 slide 15 把 **Design with cost in mind** 单独列�
 
 这组指标是本手册的迁移框架，不是 SpaceX 官方术语。
 
-## 3. Throughput 会改变研发策略
+## 3. 真实案例：40 周 lead time 就是一种成本
+
+Santi 的 valve 案例把“时间成本”讲得非常具体：一个保守 requirement 把供应路径锁到约 **40 周**。如果团队只看 unit price，这可能只是“一个采购件”；但从项目视角，它同时占用了：
+
+- 40 周 schedule；
+- 期间整支团队的 burn rate；
+- 一次设计修改后的重新等待；
+- 集成和测试被推迟后的机会成本。{{< source "SX-010" >}}
+
+因此 cost review 不能只问：
+
+> “这个 part 多少钱？”
+
+还应该问：
+
+> **“它把下一轮真实证据推迟多久？”**
+
+这也是为什么 requirement、supplier 和 test plan 必须一起 trade：有时更贵的单件，反而是更便宜的开发路径。
+
+同样要守住边界：40 周只是教学案例，不是 SpaceX 平均供应周期。
+
+## 4. Throughput 会改变研发策略
 
 假设同样一年预算：
 
@@ -69,7 +90,7 @@ B 团队：
 
 它从第一天就在决定你**能怎样研发**。
 
-## 4. NASA 对“周期成本”的一个直接解释
+## 5. NASA 对“周期成本”的一个直接解释
 
 同一张 slide 15 还有一个很有价值的观察：如果因为 readily available parts / processes 把整个项目周期缩短 6–12 个月，省下的不只是某个零件的钱，而是整支团队那几个月的 burn rate。{{< source "SX-003" >}}
 
@@ -79,7 +100,7 @@ B 团队：
 
 但这里仍然是 NASA 的经验判断，不应把“6–12 个月”当成 SpaceX 项目的普遍统计值。
 
-## 5. Musk 对 manufacturing 的强调
+## 6. Musk 对 manufacturing 的强调
 
 Starbase 访谈里 Musk 直接说 manufacturing 被低估，而生产系统往往比单次产品设计难得多。{{< source "SX-004" >}}
 
@@ -89,7 +110,7 @@ Starbase 访谈里 Musk 直接说 manufacturing 被低估，而生产系统往�
 
 > **重复、便宜、稳定地让产品工作。**
 
-## 6. Rate manufacturing 反过来塑造架构
+## 7. Rate manufacturing 反过来塑造架构
 
 Akella 对 Starlink 的回顾强调：
 
@@ -107,7 +128,7 @@ Akella 对 Starlink 的回顾强调：
 - manufacturing data；
 - cost curve。
 
-## 7. 垂直整合与成本不是简单“自己做更便宜”
+## 8. 垂直整合与成本不是简单“自己做更便宜”
 
 NASA slide 15 对内部生产给出的直接好处之一不是单价，而是 **更好的 schedule control 和更直接的 change/update**。{{< source "SX-003" >}}
 
@@ -124,7 +145,7 @@ Tom Mueller 后来在 Impulse 仍强调 vertical integration 对 cost、schedule
 
 “可能”很重要：是否值得内制必须按具体零件、供应商和阶段计算，不能把 vertical integration 当信仰。
 
-## 8. 速度方法也会失败
+## 9. 速度方法也会失败
 
 不能从 slide 15 的 design-test-repeat、COTS parts 和 cost-conscious design 推出“SpaceX 项目天然很快”。
 
@@ -136,7 +157,7 @@ GAO 在 2011 年记录，SpaceX COTS 首次演示任务比原计划晚约 18 个
 
 不是给项目贴一个“快公司”的标签。
 
-## 9. Algorithm 里的 throughput
+## 10. Algorithm 里的 throughput
 
 Tim Berry 对 The Algorithm 的解释里，第四步“go faster”直接包括：
 
@@ -150,7 +171,22 @@ Tim Berry 对 The Algorithm 的解释里，第四步“go faster”直接包括�
 
 很多时候要改的是系统产能。
 
-## 10. 一套更有用的成本指标
+## 11. 删除一个零件，价值不止 BOM -1
+
+Tim Berry 对 The Algorithm 的解释里，删除 part / process 的收益被放在完整 value chain 上看：不仅少一个零件，还可能同时减少 labor、cycle time 和制造步骤。{{< source "SX-018" >}}
+
+因此删除的经济价值可以拆成：
+
+- 少采购一个 part；
+- 少一个 supplier / incoming inspection；
+- 少一个装配动作；
+- 少一个 defect mode；
+- 少一个 test / rework 分支；
+- 少一段 inventory 和信息管理。
+
+这也是为什么 throughput 优化不能只盯设备 OEE 或操作员速度。**架构本身决定了工厂要完成多少工作。**
+
+## 12. 一套更有用的成本指标
 
 ### Part cost
 
@@ -182,7 +218,7 @@ Tim Berry 对 The Algorithm 的解释里，第四步“go faster”直接包括�
 
 这几个数字一起看，才会得到真实研发经济性。
 
-## 11. 反模式
+## 13. 反模式
 
 ### Cheapest unit wins
 
@@ -200,7 +236,7 @@ Tim Berry 对 The Algorithm 的解释里，第四步“go faster”直接包括�
 
 架构根本不适合量产，却期待制造部门后面“优化”。
 
-## 12. 对小公司尤其重要
+## 14. 对小公司尤其重要
 
 资源少不意味着应该少算成本。
 
