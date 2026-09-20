@@ -1,8 +1,8 @@
 ---
 title: "14 · 流程随成熟度增长"
 weight: 19
-status: "v0.3"
-source_ids: ["SX-002","SX-004","SX-008","SX-013","SX-023","SX-025"]
+status: "v0.4"
+source_ids: ["SX-002","SX-003","SX-004","SX-008","SX-009","SX-013","SX-023","SX-025"]
 summary: "开发样机、资格验证、生产和载人任务不能用一套流程。"
 ---
 
@@ -93,7 +93,35 @@ SpaceX Software Delivery Engineering 公开描述：
 
 所以“敏捷 = 不做 gate”是不成立的。
 
-## 4. 过早成熟化的代价
+## 4. 同一个组织里，“快开发”与 mission assurance 可以同时存在
+
+Hans Koenigsmann 是一个很好的纵向案例。他从 SpaceX 极早期的小团队、Falcon 1 开发和试验一路进入更成熟阶段，后来长期负责 mission assurance。{{< source "SX-009" >}}
+
+这个轨迹本身就反驳一种常见误解：
+
+> **组织成熟 = 把早期速度文化全部换成传统流程。**
+
+更准确的是：随着 failure consequence 和外部承诺上升，团队要在原有短反馈环上增加新的层：
+
+- qualification / acceptance；
+- 独立检查；
+- configuration discipline；
+- mission assurance；
+- 更正式的 go/no-go。
+
+新增的是**证据和控制层**，不是让真实反馈变慢。
+
+## 5. 快反馈并不保证项目不会延期
+
+NASA COTS 的 slide 15/16 把 SpaceX 的 Design–Test–Repeat、内部制造和数字协作列为重要经验；但同一时期 GAO 仍记录了明显的演示任务延期，原因包括设计、软件、生产、供应商和安全批准。{{< source "SX-003" >}}
+
+这给成熟度一个很重要的边界：
+
+> **快速工程方法只能压缩部分反馈与协调成本，不能消灭真实技术复杂度、供应风险和外部审批。**
+
+所以当组织进入更成熟阶段，不能因为“我们迭代很快”就忽略 schedule reserve、supplier control 或正式 readiness evidence。
+
+## 6. 过早成熟化的代价
 
 startup 常见错误：
 
@@ -110,7 +138,7 @@ startup 常见错误：
 
 > **process ahead of knowledge。**
 
-## 5. 过晚成熟化同样危险
+## 7. 过晚成熟化同样危险
 
 另一极端：
 
@@ -128,7 +156,7 @@ startup 常见错误：
 
 当组织进入重复生产，隐性知识必须逐步变成显性控制。
 
-## 6. regulated hardware 仍可迭代
+## 8. regulated hardware 仍可迭代
 
 Garrett Reisman 对 NASA–SpaceX 合作的回顾提供了另一个边界：他认为 NASA 的安全与复杂系统经验帮助 SpaceX 变得更成熟，而 SpaceX 的速度也反过来影响 NASA。也就是说，**成熟度增长不必等同于把反馈环拉长**。{{< source "SX-023" >}}
 
@@ -142,7 +170,7 @@ Chris Hansen 从 SpaceX 去 Radiant 后明确说，核系统仍需要 detailed a
 
 Flow Volume II 对这一点有好的教学整理，但具体所谓 SpaceX stage-gate 细节不能当一手事实。{{< source "SX-025" >}}
 
-## 7. 一条实用规则
+## 9. 一条实用规则
 
 每增加一个流程，问：
 
@@ -160,7 +188,7 @@ Flow Volume II 对这一点有好的教学整理，但具体所谓 SpaceX stage-
 
 如果答案没人知道，就可能删得太快。
 
-## 8. 反模式
+## 10. 反模式
 
 ### Prototype forever
 
@@ -178,7 +206,7 @@ Flow Volume II 对这一点有好的教学整理，但具体所谓 SpaceX stage-
 
 把所有 review 都叫官僚主义。
 
-## 9. AI 会让流程成熟更早还是更晚？
+## 11. AI 会让流程成熟更早还是更晚？
 
 两者都可能。
 
