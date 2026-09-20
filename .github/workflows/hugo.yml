@@ -23,6 +23,8 @@ jobs:
       pages_status: ${{ steps.pages.outcome }}
     steps:
       - uses: actions/checkout@v4
+      - name: Check source catalog
+        run: python scripts/check_source_catalog.py
       - name: Check source-note mirrors
         run: python scripts/check_source_mirrors.py
       - name: Check chapter source usage
