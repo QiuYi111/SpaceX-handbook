@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article>
   <nav class="breadcrumbs" aria-label="breadcrumb">
-    <a href="{{ "/" | relURL }}">首页</a><span>›</span>
+    <a href="{{ site.Home.RelPermalink }}">首页</a><span>›</span>
     <a href="{{ printf "%s/" .Section | relURL }}">{{ if eq .Section "sources" }}来源库{{ else }}{{ .Section }}{{ end }}</a>
   </nav>
   <div class="eyebrow">{{ if eq .Section "sources" }}Source note{{ else }}{{ .Section }}{{ end }}</div>
