@@ -1,8 +1,8 @@
 ---
 title: "12 · 决策、沟通与领导"
 weight: 17
-status: "v0.4"
-source_ids: ["SX-009","SX-010","SX-015","SX-016","SX-022","SX-023"]
+status: "v0.5"
+source_ids: ["SX-009","SX-010","SX-012","SX-015","SX-016","SX-022","SX-023"]
 summary: "领导的核心之一，是缩短正确的人做决定的路径。"
 ---
 
@@ -62,7 +62,24 @@ Santi 的 RE 文章给了一个很有用的案例：某个 valve 因保守 requi
 
 > **如果 owner 只能为结果负责，却无权改变导致结果失败的 requirement、预算或接口，那不是 ownership，只是责任下放。**
 
-## 4. Scope 应该跟着结果，而不是职位边界
+## 4. 原始案例：责任、权限和代价必须成套
+
+Ben Kellie 对 Vandenberg SLC-4E 的第一人称回顾把这件事写得很具体。作为刚上岗的 Responsible Engineer，他负责 acoustic water 与 ground thrust vector control 两套系统的**设计、建造、测试和 commissioning**；随着建设进入 launch campaign，他又承担现场运行，后来成为 campaign lead engineer。{{< source "SX-012" >}}
+
+这个案例能支持两件事：
+
+- ownership 围绕真实系统结果，而不是“把设计文件交出去”；
+- scope 可以随着问题进入建设、测试、运行而扩大。
+
+但同一份材料也是重要反例：Kellie 明确写到约 **18 个月持续 sprint**、出现 **17 小时班次**，并说个人代价很高。{{< source "SX-012" >}}
+
+因此不能把“完整 ownership”偷换成：
+
+> **资源不足也由 owner 自己用工时填平。**
+
+如果一个系统长期只能靠英雄式加班维持，leader 应该把它视为容量、优先级或架构问题，而不是把耐力当成组织设计。
+
+## 5. Scope 应该跟着结果，而不是职位边界
 
 Reisman 在 2023 年回顾自己加入 SpaceX 时说，第一天实际工作就和原先预想不同：公司刚投了 NASA 合同，如果拿到就由他负责。之后几年，他先后承担 human space flight、proposal、space operations 等不同范围的领导工作。{{< source "SX-022" >}}
 
@@ -72,7 +89,7 @@ Reisman 在 2023 年回顾自己加入 SpaceX 时说，第一天实际工作就�
 
 但要守住样本边界：Reisman 是高级领导岗位，不能据此推出“SpaceX 所有人都没有 job description”。
 
-## 5. 领导者不应该成为信息总线
+## 6. 领导者不应该成为信息总线
 
 坏结构：
 
@@ -88,7 +105,7 @@ Engineer A + B → leader 做系统级裁决
 
 前者看起来“管理清晰”，但每层都会丢细节、增加等待。
 
-## 6. 案例：Starlink 的领导组合
+## 7. 案例：Starlink 的领导组合
 
 Akella 回顾 Starlink 时特别提到 Mark Juncosa 的作用：既有高层信任，又能在规模化阶段持续做收敛；与此同时，团队内部仍然存在大量激烈争论。{{< source "SX-015" >}}
 
@@ -98,7 +115,7 @@ Akella 回顾 Starlink 时特别提到 Mark Juncosa 的作用：既有高层信�
 
 > **允许技术冲突发生，但不能让冲突无限拖延。**
 
-## 7. Mission 是一种决策压缩器
+## 8. Mission 是一种决策压缩器
 
 如果组织顶层目标稳定，很多争论不需要 CEO 亲自判断。
 
@@ -117,7 +134,7 @@ B：性能低一点，但能迅速放量。
 
 而不是替团队做每个技术选择。
 
-## 8. First principles 不等于反专家
+## 9. First principles 不等于反专家
 
 SpaceX 常强调 first principles，但 Starlink 的成功材料同样显示大量成熟专家不可替代。{{< source "SX-015" >}}
 
@@ -135,7 +152,7 @@ SpaceX 常强调 first principles，但 Starlink 的成功材料同样显示大�
 
 > **尊重经验提供的先验，同时要求它能接受证据和推理挑战。**
 
-## 9. 一个 leader 的日常工作清单
+## 10. 一个 leader 的日常工作清单
 
 比起“检查大家有没有干活”，更应该持续问：
 
@@ -147,7 +164,25 @@ SpaceX 常强调 first principles，但 Starlink 的成功材料同样显示大�
 - 哪个风险需要我来接受？
 - 哪个团队正在为了局部 KPI 伤害全局？
 
-## 10. 反模式
+## 11. 按可逆性设计升级路由
+
+下面是本手册根据 RE 与 Reisman 材料做的迁移框架，不是 SpaceX 官方审批矩阵。核心不是“层级越少越好”，而是让升级强度匹配错误后果。{{< source "SX-010" >}}{{< source "SX-023" >}}
+
+| 决策类型 | 默认路由 |
+|---|---|
+| 局部、可逆、低后果 | owner 直接决定，留下最小记录 |
+| 跨接口、会影响其他 owner | 相关 owner 直接对齐，冲突再升级 |
+| 高成本但可先试验 | 优先设计低成本 test，拿证据后决定 |
+| 安全/法规/不可逆 | 保留独立 review、风险接受人和明确证据 |
+| 多团队卡死或责任冲突 | leader 快速做系统级取舍，并明确谁继续 owner |
+
+Reisman 对 NASA 与 SpaceX 的比较正好给出边界：慢不一定是坏管理；当错误代价高、合同和组织边界让修改很难时，更多前置审查可能是理性的。相反，当修改可逆、设计到制造测试距离短时，过长的审批链才更可能只是等待。{{< source "SX-023" >}}
+
+所以领导优化的不是“审批数量”这个单一指标，而是：
+
+> **让每类决定付出与其风险相称的协调成本。**
+
+## 12. 反模式
 
 ### Founder as CPU
 
@@ -167,7 +202,7 @@ SpaceX 常强调 first principles，但 Starlink 的成功材料同样显示大�
 
 唯一管理动作就是把日期往前拉。
 
-## 11. AI-native 时代的领导
+## 13. AI-native 时代的领导
 
 Agent 会让信息产出暴涨。
 
