@@ -128,6 +128,10 @@ Lauren Lyons 同时有 Medtronic 与 SpaceX/Crew Dragon 背景。她后来提出
 
 ## 6. Process maturity 可以分层
 
+这不是纯理论类比。前 SpaceX 工程师 Chris Hansen 转到核能公司 Radiant 后，仍明确把 **detailed analysis、rigorous testing、validation** 视为安全硬件的必要工作，同时要求工程师端到端拥有 subsystem / component，并在 startup agility 与监管所需文档之间找平衡。{{< source "SX-013" >}}
+
+这个对照很重要：**ownership 和短反馈环可以迁移，但监管证据不能一起“精简掉”。** 不过核行业不是医疗器械，这里只把它当作“强监管硬件如何保留快速工程闭环”的现实案例，不把核监管直接当成医疗规则。
+
 早期 research rig：
 
 - 高自由度；
