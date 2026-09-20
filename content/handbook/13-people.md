@@ -1,7 +1,7 @@
 ---
 title: "13 · 人员与团队"
 weight: 18
-status: "v0.4"
+status: "v0.5"
 source_ids: ["SX-009","SX-012","SX-015","SX-016","SX-017","SX-019"]
 summary: "小团队、强 owner、专家与高成长工程师混合。"
 ---
@@ -86,7 +86,25 @@ Akella 对 Starlink 的总结正好反驳“只招年轻天才”：他认为执
 
 因此团队设计不是在“经验”与“速度”之间二选一，而是让两种认知优势互补。
 
-## 4. 招人不只看专业深度
+## 4. 原始案例：高成长环境的收益与成本同时存在
+
+Ben Kellie 的 SLC-4E 回顾提供了一个比“年轻人学习快”更具体的样本。他刚从研究生阶段进入 SpaceX，就以新 RE 身份负责两套发射场系统的**设计、建造、测试和 commissioning**，随后又进入现场运行并成为 launch campaign lead engineer。{{< source "SX-012" >}}
+
+这解释了为什么某些年轻工程师会成长很快：不是因为年龄本身，而是因为反馈链极短——设计完很快看到建造、测试和运行的真实后果。
+
+但同一案例必须成对阅读。Kellie 也写到约 **18 个月 non-stop sprint**、17 小时班次，并明确说这种成长的个人代价很高。{{< source "SX-012" >}}
+
+所以可迁移的是：
+
+> **早给完整闭环、早接触真实后果。**
+
+不是：
+
+> **用长期极端工时制造成长。**
+
+还有第二个边界：广 scope 不等于取消专业把关。Koenigsmann 从早期极小团队一路做到 mission assurance，本身就是一个反例——快速开发文化可以与专门的可靠性/任务保证角色并存。{{< source "SX-009" >}}
+
+## 5. 招人不只看专业深度
 
 一个 SpaceX 式 RE 最重要的能力可能包括：
 
@@ -114,7 +132,7 @@ Akella 对 Starlink 的总结正好反驳“只招年轻天才”：他认为执
 
 能 challenge requirement，也能接受自己的设计被 challenge。
 
-## 5. “Jack of all trades”为什么有价值
+## 6. “Jack of all trades”为什么有价值
 
 Akella 自己描述能在 PHY、MAC、network、ASIC、RF、antenna 等团队之间桥接。{{< source "SX-015" >}}
 
@@ -126,7 +144,7 @@ Akella 自己描述能在 PHY、MAC、network、ASIC、RF、antenna 等团队之
 
 这种人天然适合 RE / integrator / technical lead。
 
-## 6. hands-on 不是“工程师必须拧螺丝”
+## 7. hands-on 不是“工程师必须拧螺丝”
 
 Tom Mueller 的成长路径很 hands-on；Kellan O'Connor 也强调设计、制造、测试密切连接。{{< source "SX-017" >}}{{< source "SX-019" >}}
 
@@ -145,7 +163,7 @@ Tom Mueller 的成长路径很 hands-on；Kellan O'Connor 也强调设计、制�
 
 不是要求所有岗位每天都做 technician 工作。
 
-## 7. 一个危险神话：只要“聪明”
+## 8. 一个危险神话：只要“聪明”
 
 聪明但没有 ownership，可能只会：
 
@@ -162,7 +180,7 @@ Tom Mueller 的成长路径很 hands-on；Kellan O'Connor 也强调设计、制�
 
 > “你会什么工具？”
 
-## 8. 团队规模与接口成本
+## 9. 团队规模与接口成本
 
 小团队的一个优势是：
 
@@ -182,7 +200,7 @@ Tom Mueller 的成长路径很 hands-on；Kellan O'Connor 也强调设计、制�
 
 来保留小团队的决策速度。
 
-## 9. 反模式
+## 10. 反模式
 
 ### 只有年轻人
 
@@ -200,7 +218,9 @@ Tom Mueller 的成长路径很 hands-on；Kellan O'Connor 也强调设计、制�
 
 靠少数人长期救火，系统本身从不改。
 
-## 10. AI 对团队结构的影响
+它尤其容易和“高 ownership”混在一起。一个人临时跨边界救火可能很有价值；同一个人连续数月成为唯一兜底，则通常意味着接口、资源或知识分布没有被修复。
+
+## 11. AI 对团队结构的影响
 
 AI 会让通才能力进一步升值。
 
