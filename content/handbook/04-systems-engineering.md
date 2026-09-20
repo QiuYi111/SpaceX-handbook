@@ -2,7 +2,7 @@
 title: "04 · 分布式系统工程"
 weight: 9
 status: "v0.3"
-source_ids: ["SX-002","SX-014","SX-024","SX-026"]
+source_ids: ["SX-002","SX-014","SX-024"]
 summary: "系统思维不是一个部门的专利。"
 ---
 
