@@ -2,7 +2,7 @@
 title: "00 · 使命与顶层约束"
 weight: 5
 status: "v0.3"
-source_ids: ["SX-001","SX-014","SX-015","SX-016"]
+source_ids: ["SX-001","SX-004","SX-014","SX-015","SX-016"]
 summary: "使命稳定，部门指标服从系统目标。"
 ---
 
