@@ -1,7 +1,7 @@
 ---
 title: "09 · 垂直整合与 Make / Buy"
 weight: 14
-status: "v0.4"
+status: "v0.5"
 source_ids: ["SX-001","SX-002","SX-003","SX-016","SX-023"]
 summary: "内制的核心价值之一，是压缩物理反馈环。"
 ---
@@ -32,7 +32,29 @@ Muratore 2012 的材料给出更早期的系统原因：减少 contract/subcontr
 
 NASA COTS 观察补充了经济原因：某些部件外部采购价格高，而内部制造还能改善进度控制和变更速度。{{< source "SX-003" >}}
 
-## 2. 垂直整合真正购买的是什么
+## 2. 三个时期的纵向证据：内制比例变了，动机没有只剩“便宜”
+
+公开材料给了三个不同时间点：
+
+| 时期 | 公开材料 | 能支持的结论 |
+|---|---|---|
+| 2012 | Muratore 称当时火箭 **>70% dry mass** 在内部从原材料制造 | 减少 contract/subcontract 边界，有利于设计参数快速 trade {{< source "SX-002" >}} |
+| COTS 合作期 | NASA 观察到部分外购件太贵时 SpaceX 会转内制 | 内制同时购买 cost、schedule control 和更直接的 change/update {{< source "SX-003" >}} |
+| 2026 | S-1/A 自报 Starship 约 **80% internal manufacturing** | 公司仍把极高垂直整合与迭代速度、成本和质量控制绑定 {{< source "SX-001" >}} |
+
+三个数字/描述不能直接横向比较成“比例越来越高”：
+
+- 2012 是 Falcon 语境下的 dry mass；
+- 2026 是 Starship 的公司披露；
+- NASA COTS 是项目观察，不给统一比例。
+
+但它们跨十多年共同说明：
+
+> **SpaceX 把关键制造能力留在内部，不是某一代产品的偶然动作。**
+
+真正持续的逻辑是：当外部边界显著拖慢 trade、变更或学习时，公司更倾向把关键环节拉进自己的反馈环。
+
+## 3. 垂直整合真正购买的是什么
 
 最浅的理解是：
 
@@ -54,7 +76,7 @@ Garrett Reisman 比较 NASA 与 SpaceX 时也给了类似解释：SpaceX 能够�
 
 > **它在购买 optionality，也在购买更短的物理反馈环。**
 
-## 3. Make / Buy 应该比较什么
+## 4. Make / Buy 应该比较什么
 
 不要只问：
 
@@ -91,7 +113,28 @@ Garrett Reisman 比较 NASA 与 SpaceX 时也给了类似解释：SpaceX 能够�
 
 这四类是**我们的迁移框架**，不是 SpaceX 官方表格。它只是把前述证据转成可执行的 Make / Buy 问题。
 
-## 4. Tom Mueller：控制 cost、schedule、quality
+## 5. 一个可直接用的 Make / Buy 决策卡
+
+不要把答案压成一个“自制评分”。至少把下面几项写出来：
+
+| 维度 | 更偏向内制的信号 | 更偏向外购的信号 |
+|---|---|---|
+| 迭代频率 | 每周/每月持续改版 | 接口长期稳定 |
+| Lead time | supplier queue 决定关键 path | 样品和 revision 足够快 |
+| Know-how | 决定核心性能/学习速度 | 成熟 commodity |
+| Failure debug | 必须拿 process detail 才能 root cause | supplier 能快速给透明数据 |
+| Quality capability | 内部能建立更强过程能力 | 供应商已有成熟 validated process |
+| CAPEX | 设备可被多个版本/产品复用 | 巨额投入且利用率低 |
+| Regulation | 内制不会引入额外巨大验证负担 | 外部已有资质、历史和稳定验证体系 |
+| Reversibility | 错了能快速重做/改工艺 | 外购切换成本更低 |
+
+最后必须写一句：
+
+> **我们选择这条边界，是为了保护哪个反馈环？**
+
+如果团队说不清，只剩“别人都这样”或“SpaceX 都自己做”，说明还没有真正完成 Make / Buy trade。
+
+## 6. Tom Mueller：控制 cost、schedule、quality
 
 Tom Mueller 后来创办 Impulse Space 时仍然把 vertical integration 当作核心差异，理由很直接：更紧地控制 cost、schedule、service quality。{{< source "SX-016" >}}
 
@@ -99,7 +142,7 @@ Tom Mueller 后来创办 Impulse Space 时仍然把 vertical integration 当作�
 
 但这仍然不等于“越内制越好”。控制力只有在内部团队真的具备相应能力时才有价值。
 
-## 5. 什么东西最值得内制
+## 7. 什么东西最值得内制
 
 优先考虑：
 
@@ -123,7 +166,7 @@ Tom Mueller 后来创办 Impulse Space 时仍然把 vertical integration 当作�
 
 例如独特焊接、测试、精密装配、自动化工装。SpaceX 在 S-1/A 里甚至把制造工具本身纳入内部能力。{{< source "SX-001" >}}
 
-## 6. 什么不值得内制
+## 8. 什么不值得内制
 
 - 成熟标准件；
 - 不影响迭代速度；
@@ -135,7 +178,7 @@ Tom Mueller 后来创办 Impulse Space 时仍然把 vertical integration 当作�
 
 垂直整合的目标不是“纯血”，而是系统最优。
 
-## 7. 一个反例：自研成瘾
+## 9. 一个反例：自研成瘾
 
 创业公司很容易说：
 
@@ -159,7 +202,7 @@ Tom Mueller 后来创办 Impulse Space 时仍然把 vertical integration 当作�
 
 如果答案是否定的，外购通常更合理。
 
-## 8. 供应商也可以成为“半内部反馈环”
+## 10. 供应商也可以成为“半内部反馈环”
 
 Make / Buy 不是二元。
 
@@ -175,7 +218,7 @@ Make / Buy 不是二元。
 
 如果能做到这些，外部供应商一样可以进入快速 loop。真正要优化的是**反馈时间和信息损失**，不是公司边界本身。
 
-## 9. 医疗器械特别注意
+## 11. 医疗器械特别注意
 
 医疗器械供应商往往同时承担：
 
