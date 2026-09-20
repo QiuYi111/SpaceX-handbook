@@ -1,8 +1,8 @@
 ---
 title: "14 · 流程随成熟度增长"
 weight: 19
-status: "v0.4"
-source_ids: ["SX-002","SX-003","SX-004","SX-008","SX-009","SX-013","SX-023","SX-025"]
+status: "v0.5"
+source_ids: ["SX-002","SX-003","SX-004","SX-008","SX-009","SX-013","SX-023","SX-025","SX-031"]
 summary: "开发样机、资格验证、生产和载人任务不能用一套流程。"
 ---
 
@@ -113,7 +113,7 @@ Hans Koenigsmann 是一个很好的纵向案例。他从 SpaceX 极早期的小�
 
 ## 5. 快反馈并不保证项目不会延期
 
-NASA COTS 的 slide 15/16 把 SpaceX 的 Design–Test–Repeat、内部制造和数字协作列为重要经验；但同一时期 GAO 仍记录了明显的演示任务延期，原因包括设计、软件、生产、供应商和安全批准。{{< source "SX-003" >}}
+NASA COTS 的 slide 15/16 把 SpaceX 的 Design–Test–Repeat、内部制造和数字协作列为重要经验。{{< source "SX-003" >}} 但另一份独立的同期政府材料给出了明确反例：GAO 在 2011 年记录，SpaceX 第一场 COTS demonstration mission 比计划晚 **18 个月**，第二、第三场当时已推迟接近两年；原因横跨软件、供应商、设计稳定性、生产、测试和 flight safety approval。{{< source "SX-031" >}}
 
 这给成熟度一个很重要的边界：
 

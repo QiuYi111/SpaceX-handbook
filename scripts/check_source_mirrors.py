@@ -4,8 +4,12 @@
 The site copy under content/sources is intentionally a Hugo-shaped mirror of the
 research note: `url` becomes `external_url` and the research-only H1 is omitted.
 Everything else should stay identical.
+
+The audited source set is read from data/sources.json so adding a source cannot
+silently bypass mirror validation or require another hard-coded count update.
 """
 
+import json
 from pathlib import Path
 import re
 import sys
@@ -13,7 +17,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 RESEARCH = ROOT / "research" / "sources"
 SITE = ROOT / "content" / "sources"
-AUDITED_IDS = [f"SX-{i:03d}" for i in range(1, 31)]
+CATALOG = ROOT / "data" / "sources.json"
 
 
 def split_note(path: Path, research: bool):
@@ -41,20 +45,39 @@ def split_note(path: Path, research: bool):
 
 
 def main() -> int:
-    research_files = sorted(RESEARCH.glob("SX-*.md"))
-    site_files = sorted(SITE.glob("sx-*.md"))
     errors = []
 
-    if len(research_files) != 30:
-        errors.append(f"research/sources: expected 30 notes, found {len(research_files)}")
-    if len(site_files) != 30:
-        errors.append(f"content/sources: expected 30 notes, found {len(site_files)}")
+    try:
+        catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+        audited_ids = [item["id"] for item in catalog]
+    except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
+        print(f"Source mirror check failed: cannot read catalog ids: {exc}")
+        return 1
 
-    for source_id in AUDITED_IDS:
+    expected = set(audited_ids)
+    research_files = sorted(RESEARCH.glob("SX-*.md"))
+    site_files = sorted(SITE.glob("sx-*.md"))
+    research_ids = {path.stem.upper() for path in research_files}
+    site_ids = {path.stem.upper() for path in site_files}
+
+    missing_research = sorted(expected - research_ids)
+    extra_research = sorted(research_ids - expected)
+    missing_site = sorted(expected - site_ids)
+    extra_site = sorted(site_ids - expected)
+
+    if missing_research:
+        errors.append("research/sources missing: " + ", ".join(missing_research))
+    if extra_research:
+        errors.append("research/sources not in catalog: " + ", ".join(extra_research))
+    if missing_site:
+        errors.append("content/sources missing: " + ", ".join(missing_site))
+    if extra_site:
+        errors.append("content/sources not in catalog: " + ", ".join(extra_site))
+
+    for source_id in audited_ids:
         rpath = RESEARCH / f"{source_id}.md"
         spath = SITE / f"{source_id.lower()}.md"
         if not rpath.exists() or not spath.exists():
-            errors.append(f"{source_id}: missing research or site copy")
             continue
         try:
             rmeta, rbody = split_note(rpath, research=True)
@@ -77,8 +100,8 @@ def main() -> int:
         return 1
 
     print(
-        f"Source mirror check passed: 30/30 notes present; "
-        f"{len(AUDITED_IDS)} audited pairs synchronized."
+        f"Source mirror check passed: {len(audited_ids)}/{len(audited_ids)} notes present; "
+        f"{len(audited_ids)} audited pairs synchronized."
     )
     return 0
 
