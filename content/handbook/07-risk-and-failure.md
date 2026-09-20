@@ -1,7 +1,7 @@
 ---
 title: "07 · 风险与失败"
 weight: 12
-status: "v0.4"
+status: "v0.5"
 source_ids: ["SX-002","SX-004","SX-006","SX-020","SX-021","SX-023","SX-028"]
 summary: "失败是否可接受，取决于后果是否被提前包住。"
 ---
@@ -42,15 +42,19 @@ Musk 在 **2021-07-30 Starbase 访谈 Part 2 约 05:00–08:35**，直接把 Dra
 
 Starship 的原型损失之所以可能有开发价值，不是因为“爆炸很酷”，而是因为原型无人、可重复制造、仪器充分，而且下一版可以较快进入现场。只要这些条件不成立，同样的失败方式就未必合理。
 
-## 3. 软件里的 blast radius
+## 3. 软件里的 blast radius：Starlink 和 Dragon 恰好是反例对
 
-SpaceX 软件团队公开描述过 Starlink 的小范围 rollout：先把版本部署到有限范围，观察真实遥测，再逐步扩大。{{< source "SX-006" >}}
+2020 年 SpaceX 软件团队 AMA 把风险边界讲得比“灰度发布”四个字更清楚。对 Starlink 来说，**commanding、software update、power、hardware safety** 这类核心链路必须有明确测试用例；对后果更可控的功能，则可以先把 test build 发到少量卫星，与其余星座的表现比较。发现问题后，rollout 可以 pause、roll back，修改后再尝试。{{< source "SX-006" >}}
 
-这是非常好的风险设计：
+同一回答还给出当时的节奏：2020 年全星座软件大约每周更新一次，同时存在更多小范围 test deployment。这个数字只是一张历史快照，不能写成今天仍然如此，也不能推广到 Dragon、Falcon 或 Starship。{{< source "SX-006" >}}
 
-> **不要只降低 failure probability，也降低一次失败影响的范围。**
+更关键的反例就在同一份 AMA：Dragon 准备飞行时，会固定到一个明确的软件 revision，跑完整测试套件并审查数据。也就是说，**SpaceX 自己就同时使用“小范围真实环境试错”和“固定版本后完整验证”两种策略，区别来自后果和任务类型，而不是文化口号。**{{< source "SX-006" >}}
 
-同一个原则可以出现在硬件：
+这能支持一个很实用的风险原则：
+
+> **不要只降低 failure probability，也降低一次失败影响的范围；但当后果不可接受时，不能拿缩小 blast radius 代替正式 verification。**
+
+同一个原则可以迁移到一般硬件：
 
 - coupon 而不是整机；
 - 单通道而不是全系统；
