@@ -1,7 +1,7 @@
 ---
 title: "13 · 人员与团队"
 weight: 18
-status: "v0.3"
+status: "v0.4"
 source_ids: ["SX-009","SX-012","SX-015","SX-016","SX-017","SX-019"]
 summary: "小团队、强 owner、专家与高成长工程师混合。"
 ---
@@ -56,7 +56,37 @@ Akella 对 Starlink 的总结非常值得保留。
 - 学习速度；
 - 执行强度。
 
-## 3. 招人不只看专业深度
+## 3. 三个真实切片：所谓“强人”到底是什么
+
+### Tom Mueller：先有深度，再扩大 scope
+
+Mueller 的路径不是“什么都会的天才”。他先在推进领域有很深的 hands-on 能力，加入 SpaceX 后再和小团队一起做 Falcon 1 sizing、推进剂选择、规格定义和整车 trade。{{< source "SX-016" >}}{{< source "SX-017" >}}
+
+这更接近：
+
+> **一处很深 + 愿意跨边界承担结果。**
+
+而不是“浅浅会所有东西”。
+
+### 早期推进团队：小团队意味着每个人更靠近完整闭环
+
+O'Connor 回顾自己所在时期的 propulsion department 约 20–30 名工程师，design、analysis、development、manufacturing、Texas testing 之间距离很短。{{< source "SX-019" >}}
+
+这个数字只能当历史切片，不能推广成“20–30 人是最佳团队规模”。
+
+真正值得保留的是：
+
+- 专业边界存在；
+- 但人不会只看到自己那一小段；
+- 设计者很快看到制造和测试后果。
+
+### Starlink：专家与年轻工程师不是二选一
+
+Akella 对 Starlink 的总结正好反驳“只招年轻天才”：他认为执行速度来自有经验的无线、芯片、网络等专家，与高能量、较少受旧范式束缚的年轻工程师组合；同时还需要能让争论最终收敛的领导。{{< source "SX-015" >}}
+
+因此团队设计不是在“经验”与“速度”之间二选一，而是让两种认知优势互补。
+
+## 4. 招人不只看专业深度
 
 一个 SpaceX 式 RE 最重要的能力可能包括：
 
@@ -84,7 +114,7 @@ Akella 对 Starlink 的总结非常值得保留。
 
 能 challenge requirement，也能接受自己的设计被 challenge。
 
-## 4. “Jack of all trades”为什么有价值
+## 5. “Jack of all trades”为什么有价值
 
 Akella 自己描述能在 PHY、MAC、network、ASIC、RF、antenna 等团队之间桥接。{{< source "SX-015" >}}
 
@@ -96,7 +126,7 @@ Akella 自己描述能在 PHY、MAC、network、ASIC、RF、antenna 等团队之
 
 这种人天然适合 RE / integrator / technical lead。
 
-## 5. hands-on 不是“工程师必须拧螺丝”
+## 6. hands-on 不是“工程师必须拧螺丝”
 
 Tom Mueller 的成长路径很 hands-on；Kellan O'Connor 也强调设计、制造、测试密切连接。{{< source "SX-017" >}}{{< source "SX-019" >}}
 
@@ -115,7 +145,7 @@ Tom Mueller 的成长路径很 hands-on；Kellan O'Connor 也强调设计、制�
 
 不是要求所有岗位每天都做 technician 工作。
 
-## 6. 一个危险神话：只要“聪明”
+## 7. 一个危险神话：只要“聪明”
 
 聪明但没有 ownership，可能只会：
 
@@ -132,7 +162,7 @@ Tom Mueller 的成长路径很 hands-on；Kellan O'Connor 也强调设计、制�
 
 > “你会什么工具？”
 
-## 7. 团队规模与接口成本
+## 8. 团队规模与接口成本
 
 小团队的一个优势是：
 
@@ -152,7 +182,7 @@ Tom Mueller 的成长路径很 hands-on；Kellan O'Connor 也强调设计、制�
 
 来保留小团队的决策速度。
 
-## 8. 反模式
+## 9. 反模式
 
 ### 只有年轻人
 
@@ -170,7 +200,7 @@ Tom Mueller 的成长路径很 hands-on；Kellan O'Connor 也强调设计、制�
 
 靠少数人长期救火，系统本身从不改。
 
-## 9. AI 对团队结构的影响
+## 10. AI 对团队结构的影响
 
 AI 会让通才能力进一步升值。
 
