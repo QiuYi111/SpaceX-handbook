@@ -1,8 +1,8 @@
 ---
 title: "01 · Responsibility 与 Responsible Engineer"
 weight: 6
-status: "v0.2"
-source_ids: ["SX-002","SX-010","SX-012"]
+status: "v0.3"
+source_ids: ["SX-002","SX-008","SX-010","SX-012"]
 summary: "流程不能替代责任；一个结果需要一个真正 owner。"
 ---
 
@@ -52,7 +52,28 @@ Ben Kellie 对 Vandenberg 发射场建设的回忆，是公开材料里很具体
 
 后者描述动作，前者描述结果。
 
-## 3. 责任必须和权力一起下放
+## 3. 软件 RE：ownership 不在 merge 时结束
+
+2021 年 SpaceX Software Delivery Engineering 的公开采访给了一个很完整的软件 RE 流程：工程师从 backlog 接 issue，先理解并复现问题，再设计、实现、补 test coverage，做 functional testing，发 PR、自己找 reviewer；merge 之后还要确认下一次 master CI 通过，随后继续进入 verification。{{< source "SX-008" >}}
+
+这个案例很重要，因为它说明：
+
+> **“代码已经 merge”不是 outcome closure。**
+
+责任跨过了多个传统 handoff：
+
+- issue；
+- implementation；
+- review；
+- regression；
+- merged system；
+- verification。
+
+这和 Kellie 的硬件案例是同一个结构：负责对象不是某个动作，而是**系统在真实环境里被证明可用**。
+
+但也要守住边界：这是 2021 年软件团队的公开工作流，不能直接推成所有 SpaceX 硬件 RE 都有完全相同的权限、审批或验证路径。
+
+## 4. 责任必须和权力一起下放
 
 如果一个人：
 
@@ -69,7 +90,7 @@ Ben Kellie 对 Vandenberg 发射场建设的回忆，是公开材料里很具体
 
 这不代表取消审批。高后果、安全、法规、重大预算等决定仍然需要升级。关键是：**普通工程决策不要默认向上升级。**
 
-## 4. RE 不是个人英雄主义
+## 5. RE 不是个人英雄主义
 
 “一个 owner”并不意味着“一个人单干”。
 
@@ -87,7 +108,7 @@ SpaceX 的 RE 更接近：
 - 能判断证据是否足够；
 - 能把开放问题逐项关闭。
 
-## 5. 组织里最危险的一句话
+## 6. 组织里最危险的一句话
 
 > “我已经把这个问题交给 XX 了。”
 
@@ -99,7 +120,7 @@ SpaceX 的 RE 更接近：
 
 这会显著改变组织行为。工程师开始主动跟踪依赖，而不是把依赖变成责任边界。
 
-## 6. 流程的正确位置
+## 7. 流程的正确位置
 
 Muratore 的观点并不是“不要流程”，而是：
 
@@ -116,7 +137,7 @@ Muratore 的观点并不是“不要流程”，而是：
 
 当流程变成“只要勾完就完成”，组织就开始优化流程合规，而不是工程结果。
 
-## 7. 一个简单的 RE 卡片
+## 8. 一个简单的 RE 卡片
 
 每个关键 outcome 至少应有：
 
@@ -133,7 +154,26 @@ Muratore 的观点并不是“不要流程”，而是：
 
 这不是 SpaceX 已公开证实的固定表格，而是基于 RE 原则整理的迁移模板。
 
-## 8. 反模式
+## 9. Delegation 不是 ownership 转移
+
+RE 当然需要把子问题交给别人，但每次 delegation 至少应写清：
+
+| 字段 | 要回答的问题 |
+|---|---|
+| Subproblem | 具体交出去什么 |
+| Delegate | 谁负责这个子问题 |
+| Evidence expected | 需要带回什么证据 |
+| Due / decision point | 什么时候必须回来 |
+| Parent outcome | 它影响哪个最终结果 |
+| Outcome owner | 谁仍然负责总闭环 |
+
+最重要的一格是最后一格。
+
+> **子任务可以转交，最终 outcome 的责任不能在组织里“蒸发”。**
+
+这也是为什么“我已经发给采购/测试/软件了”不能算关闭。只有依赖被证明不再阻塞 outcome，才算真正 closure。
+
+## 10. 反模式
 
 ### “多人共同负责”
 
@@ -151,7 +191,7 @@ Muratore 的观点并不是“不要流程”，而是：
 
 错误。真正含义是：**流程服务责任，而不是替代责任。**
 
-## 9. 对 AI-native 硬件公司的启发
+## 11. 对 AI-native 硬件公司的启发
 
 AI 会让“产出动作”越来越便宜：写文档、查资料、改 CAD、生成测试脚本、分析日志都可能加速。
 
