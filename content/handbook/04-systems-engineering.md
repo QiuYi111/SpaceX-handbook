@@ -1,8 +1,8 @@
 ---
 title: "04 · 分布式系统工程"
 weight: 9
-status: "v0.3"
-source_ids: ["SX-002","SX-014","SX-024"]
+status: "v0.4"
+source_ids: ["SX-002","SX-004","SX-014","SX-024"]
 summary: "系统思维不是一个部门的专利。"
 ---
 
@@ -59,7 +59,25 @@ Muratore 的 slide 用 key design parameters 解释这一点。顶层目标固�
 
 系统工程的价值不在“谁拥有 weight budget”，而在找到**总系统最便宜的解法**。
 
-## 3. Integrator 仍然重要
+## 3. Starbase 现场：系统 trade 不是“每个零件都优化”
+
+2021 年 Starbase 访谈给了几个很直观的系统级例子。Musk 现场讨论固定 grid fin 时，关注点不是“把折叠机构本身做得更漂亮”，而是能否直接删除折叠机构，接受局部气动/尺寸代价，换取更低复杂度。{{< source "SX-004" >}}
+
+同一组访谈还讨论过：
+
+- 是否能减少独立级间分离机构/推进系统；
+- HLS 着陆时，是增加专用 landing thruster，还是让主系统承担更多功能；
+- 工程师必须理解更高层系统，避免在局部把错误目标优化到极致。{{< source "SX-004" >}}
+
+这些例子都属于 **2021 年仍在快速变化的 Starship 候选设计**，不能拿来证明今天的最终架构。
+
+但它们能证明一种 systems trade 的行为模式：
+
+> **允许一个局部指标变差，只要系统总复杂度、可靠性、制造或验证成本明显下降。**
+
+这和“每个 subsystem 都把自己的 margin 做到最大”正好相反。
+
+## 4. Integrator 仍然重要
 
 “所有人都做 systems thinking”并不等于不需要 integrator。
 
@@ -80,7 +98,7 @@ Muratore 的 slide 用 key design parameters 解释这一点。顶层目标固�
 
 > **帮助不同 RE 快速同步系统 trade，并把局部决策拉回整体。**
 
-## 4. 为什么 ownership 与 systems thinking 是一套东西
+## 5. 为什么 ownership 与 systems thinking 是一套东西
 
 如果一个人只负责 CAD，他没有动力理解供应链、测试、软件或系统 margin。
 
@@ -94,7 +112,7 @@ Muratore 的 slide 用 key design parameters 解释这一点。顶层目标固�
 
 所以 Responsible Engineer 本身就是一种**分布式系统工程机制**。
 
-## 5. Akella 的“没有 systems engineering team”怎么理解
+## 6. Akella 的“没有 systems engineering team”怎么理解
 
 Akella 的第一人称回顾中用了非常强的表达：SpaceX 没有传统 system engineering teams / architect roles，而是所有工程师都做架构和系统工程。{{< source "SX-014" >}}
 
@@ -109,7 +127,7 @@ Akella 的第一人称回顾中用了非常强的表达：SpaceX 没有传统 sy
 
 Flow Handbook 对这一点总结得很有启发，但它属于二次整理，具体断言仍应回一手材料。{{< source "SX-024" >}}
 
-## 6. 一个好的接口 owner 怎么工作
+## 7. 一个好的接口 owner 怎么工作
 
 差的接口管理：
 
@@ -128,7 +146,7 @@ Flow Handbook 对这一点总结得很有启发，但它属于二次整理，具
 - impact；
 - verification。
 
-## 7. 反模式
+## 8. 反模式
 
 ### Systems team 变成 requirement factory
 
@@ -146,7 +164,7 @@ Flow Handbook 对这一点总结得很有启发，但它属于二次整理，具
 
 分布式不等于无 owner。系统级问题仍必须明确谁收口。
 
-## 8. 适用边界
+## 9. 适用边界
 
 当系统进入：
 
@@ -160,7 +178,7 @@ Flow Handbook 对这一点总结得很有启发，但它属于二次整理，具
 
 > **这个控制是在保护真实系统风险，还是仅仅保护历史组织边界？**
 
-## 9. 对 AI-native 团队的意义
+## 10. 对 AI-native 团队的意义
 
 Agent 很适合帮工程师补 systems context：
 
