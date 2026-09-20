@@ -2,7 +2,7 @@
 title: "07 · 风险与失败"
 weight: 12
 status: "v0.5"
-source_ids: ["SX-002","SX-004","SX-006","SX-020","SX-021","SX-023","SX-028"]
+source_ids: ["SX-004","SX-006","SX-020","SX-021","SX-023","SX-028"]
 summary: "失败是否可接受，取决于后果是否被提前包住。"
 ---
 
