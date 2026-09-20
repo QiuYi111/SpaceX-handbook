@@ -1,8 +1,8 @@
 ---
 title: "15 · 成本、周期与吞吐"
 weight: 20
-status: "v0.5"
-source_ids: ["SX-001","SX-003","SX-004","SX-010","SX-014","SX-016","SX-018"]
+status: "v0.6"
+source_ids: ["SX-001","SX-003","SX-004","SX-010","SX-014","SX-016","SX-018","SX-031"]
 summary: "成本与周期从一开始就是工程变量。"
 ---
 
@@ -147,9 +147,9 @@ Tom Mueller 后来在 Impulse 仍强调 vertical integration 对 cost、schedule
 
 ## 9. 速度方法也会失败
 
-不能从 slide 15 的 design-test-repeat、COTS parts 和 cost-conscious design 推出“SpaceX 项目天然很快”。
+不能从 slide 15 的 design-test-repeat、COTS parts 和 cost-conscious design 推出“SpaceX 项目天然很快”。NASA 的 lessons-learned deck 说明团队怎样压缩反馈与成本；另一份 GAO 同期资料则直接记录了结果端的延期。{{< source "SX-003" >}}
 
-GAO 在 2011 年记录，SpaceX COTS 首次演示任务比原计划晚约 18 个月，后续演示也有接近两年的推迟；原因涉及设计、软件、生产、供应商和安全批准。{{< source "SX-003" >}}
+GAO 在 2011 年写明：SpaceX 第一场 COTS demonstration mission 于 2010 年 12 月完成，但比计划晚 **18 个月**；第二、第三场当时已推迟接近两年。GAO 列出的原因包括 Falcon 9 软件/数据库、供应商、设计不稳定与生产、Dragon 测试和软件开发，以及 flight safety approval。{{< source "SX-031" >}}
 
 所以真正值得迁移的是：
 
