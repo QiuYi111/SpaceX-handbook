@@ -2,7 +2,7 @@
 title: "02 · 需求：顶层硬，低层可交易"
 weight: 7
 status: "v0.2"
-source_ids: ["SX-002","SX-004","SX-001"]
+source_ids: ["SX-002","SX-004"]
 summary: "顶层需求要验证，低层设计参数不要过早冻结。"
 ---
 

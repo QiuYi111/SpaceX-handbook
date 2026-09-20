@@ -94,7 +94,7 @@
     "tier": "P1V",
     "title": "Santi Udomkesmalee — Deep Tech Advisor",
     "author": "Santi Udomkesmalee",
-    "date": "current",
+    "date": "undated; accessed 2026-09",
     "url": "https://www.santiu.com/",
     "themes": "author provenance"
   },
@@ -103,7 +103,7 @@
     "tier": "P1",
     "title": "SpaceX SLC-4E Lead Engineer",
     "author": "Ben Kellie",
-    "date": "current",
+    "date": "undated; accessed 2026-09",
     "url": "https://www.benkellie.com/portfolio/spx-vandy",
     "themes": "RE in practice; design-build-test-commission; operations; work intensity"
   },
@@ -220,7 +220,7 @@
     "tier": "P2",
     "title": "Iterative Systems Engineering Handbook — Volume II",
     "author": "Flow Engineering",
-    "date": "current",
+    "date": "undated; accessed 2026-09",
     "url": "https://www.flowengineering.com/handbook/iterative-systems-engineering/volume-2",
     "themes": "leadership; scoping; iterative management"
   },
@@ -229,7 +229,7 @@
     "tier": "P2",
     "title": "Systems Engineering at SpaceX",
     "author": "Valispace",
-    "date": "current",
+    "date": "2023-06-20",
     "url": "https://www.valispace.com/systems-engineering-at-spacex/",
     "themes": "Muratore synthesis; V-model; tools not rules"
   },
@@ -238,7 +238,7 @@
     "tier": "P2+",
     "title": "Liftoff",
     "author": "Eric Berger",
-    "date": "2021",
+    "date": "2021-03-02",
     "url": "https://books.google.com/books/about/Liftoff.html?id=DQ7jDwAAQBAJ",
     "themes": "Falcon 1 era; early team; failure; mission; scrappy engineering"
   },
@@ -247,7 +247,7 @@
     "tier": "P2+",
     "title": "Reentry",
     "author": "Eric Berger",
-    "date": "2024",
+    "date": "2024-09-24",
     "url": "https://www.simonandschuster.com/books/Reentry/Eric-Berger/9781637745274",
     "themes": "Falcon 9; Dragon; reuse; accidents; management costs"
   },
@@ -256,7 +256,7 @@
     "tier": "P1-support",
     "title": "Applied Atomics team — Ben Kellie / Paul Keutelian",
     "author": "Applied Atomics",
-    "date": "current",
+    "date": "undated; accessed 2026-09",
     "url": "https://www.appliedatomics.com/team",
     "themes": "RE provenance; transfer to nuclear"
   },
@@ -265,7 +265,7 @@
     "tier": "P1",
     "title": "Welcome to Anti-Hype",
     "author": "Anti-Hype Hardware",
-    "date": "current",
+    "date": "2024-07-31",
     "url": "https://newsletter.antihypehardware.com/p/welcome-to-anti-hype",
     "themes": "hardware culture; anti-hype; cost of demanding career"
   }

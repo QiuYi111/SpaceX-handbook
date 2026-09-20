@@ -2,7 +2,7 @@
 title: "01 · Responsibility 与 Responsible Engineer"
 weight: 6
 status: "v0.2"
-source_ids: ["SX-002","SX-010","SX-012","SX-029"]
+source_ids: ["SX-002","SX-010","SX-012"]
 summary: "流程不能替代责任；一个结果需要一个真正 owner。"
 ---
 

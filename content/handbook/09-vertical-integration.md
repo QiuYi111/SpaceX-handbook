@@ -2,7 +2,7 @@
 title: "09 · 垂直整合与 Make / Buy"
 weight: 14
 status: "v0.4"
-source_ids: ["SX-001","SX-002","SX-003","SX-016","SX-019","SX-023"]
+source_ids: ["SX-001","SX-002","SX-003","SX-016","SX-023"]
 summary: "内制的核心价值之一，是压缩物理反馈环。"
 ---
 

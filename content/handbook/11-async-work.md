@@ -2,7 +2,7 @@
 title: "11 · Ticket、异步 Review 与会议"
 weight: 16
 status: "v0.4"
-source_ids: ["SX-003","SX-005","SX-007","SX-019","SX-020"]
+source_ids: ["SX-003","SX-019","SX-020"]
 summary: "简单、可记录的问题异步化；真正有歧义的事情再同步。"
 ---
 
