@@ -1,0 +1,16 @@
+{{ if eq .Section "handbook" }}
+  {{ with .Params.status }}<p class="handbook-status">状态：{{ . }}</p>{{ end }}
+  {{ with .Params.source_ids }}
+    <div class="handbook-sources">
+      <span>主要来源：</span>
+      {{ range . }}{{ partial "source-link.html" . }} {{ end }}
+    </div>
+  {{ end }}
+{{ else if eq .Section "sources" }}
+  <div class="source-note-meta">
+    {{ with .Params.id }}<strong>{{ . }}</strong>{{ end }}
+    {{ with .Params.tier }}<span> · {{ . }}</span>{{ end }}
+    {{ with .Params.access }}<span> · {{ . }}</span>{{ end }}
+    {{ with .Params.external_url }}<span> · <a href="{{ . }}" target="_blank" rel="noopener">原始资料 ↗</a></span>{{ end }}
+  </div>
+{{ end }}

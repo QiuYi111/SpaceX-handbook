@@ -1,0 +1,8 @@
+{{ $id := .Get 0 }}
+{{ range hugo.Data.sources }}
+  {{ if eq .id $id }}
+    <span class="source-cite">
+      <a class="source-ref" href="{{ printf "sources/%s/" (lower .id) | relURL }}">[{{ .id }} · {{ .tier }}]</a><a class="source-external" href="{{ .url }}" target="_blank" rel="noopener" aria-label="打开原始资料">↗</a>
+    </span>
+  {{ end }}
+{{ end }}

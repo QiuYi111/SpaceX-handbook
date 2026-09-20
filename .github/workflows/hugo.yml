@@ -21,22 +21,44 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.25.x"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.166.0"
+          extended: true
+
       - name: Check source catalog
         run: python scripts/check_source_catalog.py
       - name: Check source-note mirrors
         run: python scripts/check_source_mirrors.py
       - name: Check chapter source usage
         run: python scripts/check_source_usage.py
-      - uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: latest
-          extended: true
-      - run: hugo --minify --baseURL "https://qiuyi111.github.io/SpaceX-handbook/"
+      - name: Check chapter order metadata
+        run: python scripts/check_chapter_order.py
+
+      - name: Prepare Docsy npm dependencies
+        run: |
+          hugo mod npm pack
+          npm install
+
+      - name: Build
+        run: npm run hugo -- --minify --baseURL "https://qiuyi111.github.io/SpaceX-handbook/"
+
       - name: Check rendered internal links
         run: python scripts/check_internal_links.py public --prefix /SpaceX-handbook/
+
       - name: Configure Pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
+
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3

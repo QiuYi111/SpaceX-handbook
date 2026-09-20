@@ -1,0 +1,45 @@
+// Keep project styling small. Docsy/docsy-gitlab owns the main visual system.
+
+.source-cite {
+  white-space: nowrap;
+}
+
+.source-ref {
+  font-family: var(--bs-font-monospace);
+  font-size: .78em;
+  text-decoration: none;
+}
+
+.source-external {
+  margin-left: .15rem;
+  font-size: .75em;
+  text-decoration: none;
+}
+
+.handbook-status,
+.handbook-sources,
+.source-note-meta,
+.source-kicker,
+.source-actions {
+  color: var(--bs-secondary-color);
+  font-size: .875rem;
+}
+
+.handbook-sources,
+.source-note-meta {
+  margin-bottom: 1.5rem;
+}
+
+.source-entry {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.source-entry h3 {
+  margin: .2rem 0;
+  font-size: 1.05rem;
+}
+
+.source-entry p {
+  margin: .25rem 0;
+}
