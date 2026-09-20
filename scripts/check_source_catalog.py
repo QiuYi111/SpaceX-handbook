@@ -5,8 +5,9 @@ The site keeps source metadata in two places:
 - data/sources.json drives citation/source-list rendering;
 - content/sources/sx-*.md stores research notes and their external_url.
 
-This guard prevents metadata drift, malformed catalog entries, and floating
-source dates from silently reaching citations or the source index.
+This guard prevents metadata drift, malformed catalog entries, non-contiguous
+source IDs, and floating source dates from silently reaching citations or the
+source index.
 """
 
 from __future__ import annotations
@@ -21,7 +22,6 @@ CATALOG = ROOT / "data" / "sources.json"
 NOTES = ROOT / "content" / "sources"
 SOURCE_INDEX = NOTES / "_index.md"
 
-EXPECTED_IDS = [f"SX-{i:03d}" for i in range(1, 31)]
 ID_RE = re.compile(r"^SX-\d{3}$")
 COUNT_RE = re.compile(r"收录目前使用的 \*\*(\d+) 个主要来源\*\*")
 REQUIRED_FIELDS = {"id", "tier", "title", "author", "date", "url", "themes"}
@@ -70,15 +70,18 @@ def main() -> int:
     if not isinstance(catalog, list):
         print("Source catalog check failed: data/sources.json must contain a list")
         return 1
-
-    if len(catalog) != 30:
-        errors.append(f"catalog: expected 30 entries, found {len(catalog)}")
+    if not catalog:
+        print("Source catalog check failed: data/sources.json must not be empty")
+        return 1
 
     ids = [item.get("id") for item in catalog if isinstance(item, dict)]
     if len(ids) != len(set(ids)):
         errors.append("data/sources.json contains duplicate source ids")
-    if ids != EXPECTED_IDS:
-        errors.append("catalog IDs must be exactly SX-001..SX-030 in order")
+    expected_ids = [f"SX-{i:03d}" for i in range(1, len(catalog) + 1)]
+    if ids != expected_ids:
+        errors.append(
+            f"catalog IDs must be contiguous SX-001..SX-{len(catalog):03d} in order"
+        )
 
     known: dict[str, dict[str, str]] = {}
     for index, item in enumerate(catalog, start=1):
