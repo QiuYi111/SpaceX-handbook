@@ -166,7 +166,7 @@
     "tier": "P1/P2",
     "title": "Former SpaceX Engineer Breaks Down the Code to Successful Hardware Engineering",
     "author": "Duro Labs / Kellan O'Connor",
-    "date": "current",
+    "date": "2026-07-02",
     "url": "https://durolabs.co/blog/spacex-engineering/",
     "themes": "design-analysis-build-test; in-house; propulsion; feedback loop"
   },
@@ -184,7 +184,7 @@
     "tier": "P1V",
     "title": "Lauren Lyons profile",
     "author": "Creative Destruction Lab",
-    "date": "current",
+    "date": "undated; accessed 2026-09",
     "url": "https://creativedestructionlab.com/mentors/lauren-lyons/",
     "themes": "author provenance; Crew Dragon; mission assurance; Medtronic"
   },
@@ -193,7 +193,7 @@
     "tier": "P1",
     "title": "Garrett Reisman fireside chat",
     "author": "Garrett Reisman / Wharton",
-    "date": "current",
+    "date": "2023-03-24",
     "url": "https://fisher.wharton.upenn.edu/mt-for-life/garrett-reisman-mt90/",
     "themes": "role fluidity; ownership; NASA-SpaceX interface"
   },
@@ -202,7 +202,7 @@
     "tier": "P1",
     "title": "Garrett Reisman on SpaceX vs NASA culture",
     "author": "Garrett Reisman interview",
-    "date": "2024",
+    "date": "2024-06-07",
     "url": "https://armenpress.am/en/article/1139004",
     "themes": "decision speed; vertical integration; NASA comparison; reversibility"
   },
@@ -211,7 +211,7 @@
     "tier": "P2",
     "title": "Iterative Systems Engineering Handbook — Volume I",
     "author": "Flow Engineering",
-    "date": "current",
+    "date": "undated; accessed 2026-09",
     "url": "https://www.flowengineering.com/handbook/iterative-systems-engineering/volume-1",
     "themes": "iterative SE; ownership; requirements; culture; SpaceX examples"
   },
