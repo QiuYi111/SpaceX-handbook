@@ -1,7 +1,7 @@
 ---
 title: "05 · Design–Build–Test–Repeat"
 weight: 10
-status: "v0.2"
+status: "v0.3"
 source_ids: ["SX-002","SX-003","SX-019","SX-013"]
 summary: "优化从工程假设到真实证据的总周期。"
 ---
@@ -48,7 +48,23 @@ NASA 在 COTS 合作复盘中记录了 SpaceX 快速 Design–Test–Repeat 的�
 
 所以团队应该测的不是“设计部门效率”，而是整个 loop 的 wall-clock time。
 
-## 3. 找最长的等待，而不是最忙的人
+## 3. 真实切片：早期 Merlin 不是“设计完再测试”
+
+Kellan O'Connor 对早期推进团队的回顾，把这个闭环说得比“快速迭代”四个字具体得多：当时 propulsion department 约 **20–30 名工程师**，design engineer 与 analysis、development engineer 紧密合作；设计先做数字分析，再进入实物制造和装配，硬件随后送到 Texas test facility。{{< source "SX-019" >}}
+
+这个案例说明，真正的闭环不是：
+
+> CAD → release → 等别人测试。
+
+而更接近：
+
+> **设计判断 → 分析 → 做出来 → 上台架 → 数据回来 → 原设计者继续改。**
+
+这里最值得学的不是“团队一定要 20–30 人”，而是**负责设计的人离真实后果足够近**。
+
+时间边界也要写清楚：这是 O'Connor 所处时期的早期推进团队切片，不是今天所有 SpaceX 团队的固定规模或标准流程。
+
+## 4. 找最长的等待，而不是最忙的人
 
 假设：
 
@@ -74,7 +90,7 @@ NASA 在 COTS 合作复盘中记录了 SpaceX 快速 Design–Test–Repeat 的�
 
 这也是 SpaceX 垂直整合为什么与快速迭代高度相关。
 
-## 4. 实验要回答问题，不要展示进度
+## 5. 实验要回答问题，不要展示进度
 
 差的 prototype：
 
@@ -91,7 +107,7 @@ NASA 在 COTS 合作复盘中记录了 SpaceX 快速 Design–Test–Repeat 的�
 - 失败越便宜；
 - 下一步越明确。
 
-## 5. 用最低层级解决未知
+## 6. 用最低层级解决未知
 
 一个未知可以在不同层级回答：
 
@@ -113,7 +129,7 @@ NASA 在 COTS 合作复盘中记录了 SpaceX 快速 Design–Test–Repeat 的�
 
 如果问题只会出现在整机耦合中，再多 coupon 也替代不了 integrated test。
 
-## 6. 失败必须产生信息
+## 7. 失败必须产生信息
 
 一次 prototype 失败值得不值得，取决于：
 
@@ -125,7 +141,7 @@ NASA 在 COTS 合作复盘中记录了 SpaceX 快速 Design–Test–Repeat 的�
 
 如果每次都只是“炸了，不知道为什么”，那不是快速学习，只是快速消耗硬件。
 
-## 7. 制造能力决定你能否承担迭代
+## 8. 制造能力决定你能否承担迭代
 
 Kellan O'Connor 对 Merlin 开发的描述反映了一个重要条件：设计、制造和 Texas 测试之间能够快速来回。{{< source "SX-019" >}}
 
@@ -142,7 +158,24 @@ Chris Hansen 后来把类似方法带到核反应堆 startup，也说明这种�
 
 因此“低成本快速制造”不是支持部门能力，而是**研发方法本身的基础设施**。
 
-## 8. 把学习速度写进项目管理
+## 9. 强监管行业也能做短反馈环，但证据门槛不能降
+
+Chris Hansen 离开 SpaceX 去 Radiant 后，给了一个很好的迁移反例：核系统并没有因为要快就少做分析和验证。他明确强调 detailed analysis、rigorous testing、validation；同时团队搭建氦循环器 test loop，模拟运行温度和流阻，并把数据回填内部 Digital Twin。{{< source "SX-013" >}}
+
+这个案例不是 SpaceX 流程本身，但它说明一个重要边界：
+
+> **短反馈环的本质是更快得到可信证据，不是降低证据标准。**
+
+对于高后果硬件，真正应该缩短的是：
+
+- fixture / test loop 搭建时间；
+- instrumentation 与数据整理时间；
+- failure → root cause 时间；
+- 修改后重新验证的时间。
+
+而不是把 qualification、verification 或监管要求本身删掉。
+
+## 10. 把学习速度写进项目管理
 
 一个更好的 issue 不只写：
 
@@ -154,7 +187,7 @@ Chris Hansen 后来把类似方法带到核反应堆 startup，也说明这种�
 
 这样 issue 的完成条件不是“CAD merged”，而是“未知被关闭”。
 
-## 9. 反模式
+## 11. 反模式
 
 ### Big-bang prototype
 
@@ -172,7 +205,7 @@ Chris Hansen 后来把类似方法带到核反应堆 startup，也说明这种�
 
 issue 一直 open，看起来团队很忙，实际 80% 时间在等采购、等 review、等测试。
 
-## 10. 最值得跟踪的几个周期
+## 12. 最值得跟踪的几个周期
 
 对于硬件团队，可以长期跟踪：
 

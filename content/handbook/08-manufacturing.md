@@ -1,7 +1,7 @@
 ---
 title: "08 · 制造即工程"
 weight: 13
-status: "v0.3"
+status: "v0.4"
 source_ids: ["SX-001","SX-003","SX-007","SX-014","SX-018","SX-019"]
 summary: "Engineering 与 Manufacturing 不是前后两棒。"
 ---
@@ -34,13 +34,35 @@ Starlink 前工程领导 Ramakrishna Akella 直接强调：rate manufacturing �
 
 系统还没完成。
 
-## 2. SpaceX 的公开证据
+## 2. 三个时期，制造都不是末端部门
 
-Kellan O'Connor 回忆早期 Merlin 团队时，design、analysis、manufacturing、Texas testing 之间反馈非常短。{{< source "SX-019" >}}
+### COTS：内制购买的是改动速度
 
-NASA COTS 也观察到内部制造让 SpaceX 能更直接控制成本、进度和修改。{{< source "SX-003" >}}
+NASA 在 COTS 复盘 slide 15 记录：SpaceX 在设计早期就追问零件为什么贵；当某些外购件成本过高时会转为内部制造。NASA 同时强调的好处不只有单价，还包括 **schedule control** 和更直接的 change / update。{{< source "SX-003" >}}
 
-2026 S-1 更进一步，把“tools that make the tools”和制造规模直接写进公司能力。{{< source "SX-001" >}}
+所以“自己做”真正购买的可能是：
+
+- 下一版不用重新排供应商；
+- 设计问题能直接回到制造；
+- 一个改动不必跨多层合同边界。
+
+但这不能推出“内制永远更便宜”。NASA 这页是项目经验总结，不是对所有 make/buy 决策的成本审计。
+
+### 早期 Merlin：设计、制造、测试在一个物理闭环里
+
+O'Connor 回顾的推进团队约 20–30 名工程师。design、analysis、development 紧密合作；数字分析之后进入制造和装配，再去 Texas test facility。{{< source "SX-019" >}}
+
+这说明制造的价值不只是把图纸变成零件，而是：
+
+> **让设计假设尽快遇到现实。**
+
+同一采访还有一个反例：早期 Engineering Change Order 仍然要打印纸张、线下找多人签字，后来数字 PLM 才改善。也就是说，SpaceX 并不是从第一天起就拥有“完美数字工厂”；制造系统本身也在持续迭代。{{< source "SX-019" >}}
+
+### 2026：制造工具本身也被当成核心能力
+
+到 2026 年 S-1/A，SpaceX 已经把内部能力写到 engines、avionics、structures、software，甚至 **tools that make the tools**。{{< source "SX-001" >}}
+
+这里可以可靠得到的结论是：制造能力长期处在公司核心工程能力之内；不能仅凭这句话推断具体工厂自动化率、设备自制比例或每条产线的组织方式。
 
 ## 3. Starlink：产品和工厂一起设计
 
@@ -53,6 +75,14 @@ Stack Overflow 对 SpaceX application software 团队的采访显示，为了 St
 这说明：
 
 > **工厂不是 downstream customer，而是产品本身的一部分。**
+
+而且这个案例还有第二层：2021 采访把 Warp Drive 描述成长期使用的 monolithic ERP；Starlink 从 2019 年开始，因为制造模式不同，又在它之外建设新的 MES。{{< source "SX-007" >}}
+
+这给了一个很重要的反例：
+
+> **“数字主线”不等于“所有产品永远用同一个系统”。**
+
+当产品形态、生产节拍和现场需求变了，制造软件本身也需要跟着重新设计。
 
 ## 4. 一个设计是否完成，要同时回答六个问题
 
@@ -147,10 +177,21 @@ SpaceX 内部 ERP/MES 类系统能跟踪：
 
 但即使年产只有几十台，**可装、可测、可追踪、可返工**仍然应该是设计输入。
 
-## 10. 一个简单的 design review 追加问题
+## 10. 一个制造 review 不该只看 CAD
 
-每次 review 多问一句：
+每次 review 至少再问：
 
-> **如果下个月要做 100 件，什么先崩？**
+- 如果下个月要做 100 件，什么先崩？
+- 哪一步最依赖某个熟练工的手感？
+- 哪个公差最容易变成返工？
+- 哪个 test station 会先排队？
+- 哪个 defect 现在还无法沿零件关系追踪？
+- 哪个 design change 会让现场拿到错误 revision？
 
-答案通常比再看一次 CAD 更有价值。
+其中最后两类问题正是 SpaceX application software 公开描述过的制造信息系统能力：追踪零件位置、零件关系、quality escape 和 change impact。{{< source "SX-007" >}}
+
+所以制造设计至少同时包含两层：
+
+> **物理工艺 + 信息流。**
+
+只优化其中一层，规模上来都会出问题。
